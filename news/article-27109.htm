@@ -132,7 +132,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>转自：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/d6f209b8796d"  rel="nofollow">https://www.jianshu.com/p/d6f209b8796d</a></p> <p>前言</p> <p>C\C++提供了底层的内存操作，为程序提供了强大的能力。在使用<code>malloc() calloc() realloc()</code> 进行动态内存分配时，内存区域中的这个空间称为堆(heap)，另一个内存区域，称为栈(stack)，其中的空间分配给函数的参数和本地变量，执行完该函数后，存储参数和本地变量的内存空间就会自</p> <p>动释放。而堆中的内存是由人控制的，在分配堆上的内存时，需要人自己来判断什么时候需要分配，什么时候需要释放。</p> <p><code>malloc</code></p> <ol> <li>函数原型<br /><code>(TYPE *) malloc(SIZE)</code></li> <li>函数功能<br /><code>malloc()</code> 在内存的动态存储区中分配一块长度为<code>SIZE</code> 字节的连续区域。参数<code>SIZE</code> 为需要的内存空间的长度，返回该区域的地址。<code>malloc()</code> 函数不能为所分配的空间初始化值，需要使用<code>memset()</code>，不然可能会出现内存中遗留的数据。在程序结束前，需要使用<code>free()</code> 进行内存释放。</li> <li>使用</li> </ol> <pre class="has"><code>int *p = NULL; p = (int *) malloc(sizeof(int)); // 申请 memset(p, 20, sizeof(int) / 4); // 赋初值（不可取） printf("%d\n", *p); // 20 free(p); // 释放</code></pre> <p>主要注意的是，<code>memset()</code> 是按照字节来进行赋值，而<code>char</code> 类型的空间恰好是1字节，所以<code>memset()</code> 最好用于<code>char</code> 类型的赋值。当然，也可以用<code>sizeof(int) / 4</code> 来给<code>int</code> 类型赋值，只不过只能赋 0x00 - oxff 的值。不然的话就是按位赋值四次。</p> <pre class="has"><code>char *p = NULL; p = (char *) malloc(sizeof(char)); memset(p, 'g', sizeof(char)); printf("%c\n", *p); // g free(p); p = NULL;</code></pre> <p>如上，<code>char</code> 类型可以完美的赋值。</p> <p><code>calloc</code></p> <ol> <li>函数原型<br /><code>(TYPE * )calloc(int n, SIZE);</code></li> <li>函数功能<br /><code>calloc()</code> 函数功能和<code>malloc</code> 类似，都是从堆内存中分配内存，不同的是，<code>calloc()</code> 会自动进行初始化，每一位都初始化为零。<code>n</code> 表示元素的个数，<code>SIZE</code> 为单位元素的长度，从定义上看，<code>calloc()</code> 适合为数组申请动态内存。与<code>malloc()</code> 最后也需要使用<code>free()</code> 进行内存释放。</li> <li>使用</li> </ol> <pre class="has"><code>#define SIZE 10 int *p; p = (int *) calloc(SIZE, sizeof(int)); for (int i = 0; i &lt; SIZE; ++i) {     p[i] = i; } for (int j = 0; j &lt; SIZE; ++j) {     printf("%d\n", p[j]); // 0, 1, 2, 3, 4, 5 ... } free(p); p = NULL;</code></pre> <p><code>realloc</code></p> <ol> <li>函数原型<br /><code>(TYPE * )realloc(TYPE *ptr, NEW_SIZE);</code></li> <li>函数功能<br /><code>realloc()</code> 是给一个已经分配了地址的指针重新分配动态内存空间，<code>*ptr</code> 为原有的空间地址，<code>NEW_SIZE</code> 是重新申请的空间，若新的空间小于之前的空间，则不会进行改变，若新的空间大于原来的空间，则会从堆内存中为<code>*ptr</code> 分配一个大小为<code>NEW_SIZE</code> 的空间吗，同时将原来空间的内容依次复制进新的地址空间，<code>*ptr</code> 之前的空间被释放，<code>realloc()</code> 所分配的空间也是未初始化的。</li> <li>使用</li> </ol> <pre class="has"><code>#define SIZE 10 int *p; p = (int *) calloc(SIZE, sizeof(int)); for (int i = 0; i &lt; SIZE; ++i) {     p[i] = i; } p = (int *) realloc(p, SIZE * 2); for (int j = 10; j &lt; SIZE * 2; ++j) {     p[j] = j; } for (int k = 0; k &lt; SIZE * 2; ++k) {     printf("%d\n", p[k]); // 1, 2, 3, ... , 19 } free(p); p</code></pre> </div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>转自：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jianshu.com/p/d6f209b8796d"  rel="nofollow">https://www.jianshu.com/p/d6f209b8796d</a></p> <p>前言</p> <p>C\C++提供了底层的内存操作，为程序提供了强大的能力。在使用<code>malloc() calloc() realloc()</code> 进行动态内存分配时，内存区域中的这个空间称为堆(heap)，另一个内存区域，称为栈(stack)，其中的空间分配给函数的参数和本地变量，执行完该函数后，存储参数和本地变量的内存空间就会自</p> <p>动释放。而堆中的内存是由人控制的，在分配堆上的内存时，需要人自己来判断什么时候需要分配，什么时候需要释放。</p> <p><code>malloc</code></p> <ol> <li>函数原型<br /><code>(TYPE *) malloc(SIZE)</code></li> <li>函数功能<br /><code>malloc()</code> 在内存的动态存储区中分配一块长度为<code>SIZE</code> 字节的连续区域。参数<code>SIZE</code> 为需要的内存空间的长度，返回该区域的地址。<code>malloc()</code> 函数不能为所分配的空间初始化值，需要使用<code>memset()</code>，不然可能会出现内存中遗留的数据。在程序结束前，需要使用<code>free()</code> 进行内存释放。</li> <li>使用</li> </ol> <pre class="has"><code>int *p = NULL; p = (int *) malloc(sizeof(int)); // 申请 memset(p, 20, sizeof(int) / 4); // 赋初值（不可取） printf("%d\n", *p); // 20 free(p); // 释放</code></pre> <p>主要注意的是，<code>memset()</code> 是按照字节来进行赋值，而<code>char</code> 类型的空间恰好是1字节，所以<code>memset()</code> 最好用于<code>char</code> 类型的赋值。当然，也可以用<code>sizeof(int) / 4</code> 来给<code>int</code> 类型赋值，只不过只能赋 0x00 - oxff 的值。不然的话就是按位赋值四次。</p> <pre class="has"><code>char *p = NULL; p = (char *) malloc(sizeof(char)); memset(p, 'g', sizeof(char)); printf("%c\n", *p); // g free(p); p = NULL;</code></pre> <p>如上，<code>char</code> 类型可以完美的赋值。</p> <p><code>calloc</code></p> <ol> <li>函数原型<br /><code>(TYPE * )calloc(int n, SIZE);</code></li> <li>函数功能<br /><code>calloc()</code> 函数功能和<code>malloc</code> 类似，都是从堆内存中分配内存，不同的是，<code>calloc()</code> 会自动进行初始化，每一位都初始化为零。<code>n</code> 表示元素的个数，<code>SIZE</code> 为单位元素的长度，从定义上看，<code>calloc()</code> 适合为数组申请动态内存。与<code>malloc()</code> 最后也需要使用<code>free()</code> 进行内存释放。</li> <li>使用</li> </ol> <pre class="has"><code>#define SIZE 10 int *p; p = (int *) calloc(SIZE, sizeof(int)); for (int i = 0; i &lt; SIZE; ++i) {     p[i] = i; } for (int j = 0; j &lt; SIZE; ++j) {     printf("%d\n", p[j]); // 0, 1, 2, 3, 4, 5 ... } free(p); p = NULL;</code></pre> <p><code>realloc</code></p> <ol> <li>函数原型<br /><code>(TYPE * )realloc(TYPE *ptr, NEW_SIZE);</code></li> <li>函数功能<br /><code>realloc()</code> 是给一个已经分配了地址的指针重新分配动态内存空间，<code>*ptr</code> 为原有的空间地址，<code>NEW_SIZE</code> 是重新申请的空间，若新的空间小于之前的空间，则不会进行改变，若新的空间大于原来的空间，则会从堆内存中为<code>*ptr</code> 分配一个大小为<code>NEW_SIZE</code> 的空间吗，同时将原来空间的内容依次复制进新的地址空间，<code>*ptr</code> 之前的空间被释放，<code>realloc()</code> 所分配的空间也是未初始化的。</li> <li>使用</li> </ol> <pre class="has"><code>#define SIZE 10 int *p; p = (int *) calloc(SIZE, sizeof(int)); for (int i = 0; i &lt; SIZE; ++i) {     p[i] = i; } p = (int *) realloc(p, SIZE * 2); for (int j = 10; j &lt; SIZE * 2; ++j) {     p[j] = j; } for (int k = 0; k &lt; SIZE * 2; ++k) {     printf("%d\n", p[k]); // 1, 2, 3, ... , 19 } free(p); p</code></pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-26645.htm">动物疫苗证明哪里开的啊（动物疫苗证去哪里办怎么办）</a></p>
                                         <p>下一个：<a href="/news/article-27110.htm">动物医院等级分类有哪些（动物医院等级分类有哪些标准）</a></p>
@@ -145,16 +146,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-24536.htm" title="Git下载安装及设置详细教程">Git下载安装及设置详细教程</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-7-clash-node.htm" title="9月7日|最高速度22.9M/S，2024最新Shadowrocket/Clash/SSR/V2ray免费节点高速订阅链接">9月7日|最高速度22.9M/S，2024最新Shadowrocket/Clash/SSR/V2ray免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-19720.htm" title="动物疫苗企业名单公示（国内动物疫苗龙头企业）">动物疫苗企业名单公示（国内动物疫苗龙头企业）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-20-node-share-links.htm" title="6月20日|最高速度19M/S，2024最新SSR/Shadowrocket/V2ray/Clash免费节点高速订阅链接">6月20日|最高速度19M/S，2024最新SSR/Shadowrocket/V2ray/Clash免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-12-node-share-links.htm" title="10月12日|最高速度19.6M/S，2024最新Clash/V2ray/SSR/Shadowrocket免费节点高速订阅链接">10月12日|最高速度19.6M/S，2024最新Clash/V2ray/SSR/Shadowrocket免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-28-free-node-subscribe.htm" title="6月28日|最高速度18.8M/S，2024最新Clash/V2ray/SSR/Shadowrocket免费节点高速订阅链接">6月28日|最高速度18.8M/S，2024最新Clash/V2ray/SSR/Shadowrocket免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-clash.htm" title="11月30日|最高速度18.7M/S，2024最新V2ray/SSR/Shadowrocket/Clash免费节点高速订阅链接，翻墙机场推荐">11月30日|最高速度18.7M/S，2024最新V2ray/SSR/Shadowrocket/Clash免费节点高速订阅链接，翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-14-shadowrocket-node.htm" title="10月14日|最高速度18.9M/S，2024最新SSR/V2ray/Clash/Shadowrocket免费节点高速订阅链接，翻墙机场推荐">10月14日|最高速度18.9M/S，2024最新SSR/V2ray/Clash/Shadowrocket免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-21556.htm" title="青岛最好宠物医院是哪家（青岛好点的宠物医院）">青岛最好宠物医院是哪家（青岛好点的宠物医院）</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-6-2-node-share.htm" title="6月2日|最高速度23M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费节点高速订阅链接">6月2日|最高速度23M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-13-free-node-subscribe-links.htm" title="9月13日|最高速度19.1M/S，2024最新Clash/Shadowrocket/V2ray/SSR免费节点高速订阅链接">9月13日|最高速度19.1M/S，2024最新Clash/Shadowrocket/V2ray/SSR免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-3-clash-v2ray-ss-ssr.htm" title="8月3日|最高速度19.6M/S，2024最新Clash/SSR/Shadowrocket/V2ray免费节点高速订阅链接">8月3日|最高速度19.6M/S，2024最新Clash/SSR/Shadowrocket/V2ray免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-12-shadowrocket-node.htm" title="9月12日|最高速度18.6M/S，2024最新Clash/SSR/V2ray/Shadowrocket免费节点高速订阅链接">9月12日|最高速度18.6M/S，2024最新Clash/SSR/V2ray/Shadowrocket免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-12-clash-windows.htm" title="7月12日|最高速度18.6M/S，2024最新Shadowrocket/SSR/V2ray/Clash免费节点高速订阅链接">7月12日|最高速度18.6M/S，2024最新Shadowrocket/SSR/V2ray/Clash免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28030.htm" title="PyQt5 在qtdesigner中使用自定义的控件">PyQt5 在qtdesigner中使用自定义的控件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-6-free-ssr-node.htm" title="9月6日|最高速度19.1M/S，2024最新SSR/Clash/V2ray/Shadowrocket免费节点高速订阅链接">9月6日|最高速度19.1M/S，2024最新SSR/Clash/V2ray/Shadowrocket免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-clash-node.htm" title="11月18日|最高速度18.3M/S，2024最新Clash/SSR/V2ray/Shadowrocket免费节点高速订阅链接，翻墙机场推荐">11月18日|最高速度18.3M/S，2024最新Clash/SSR/V2ray/Shadowrocket免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-25718.htm" title="河北农大动物医院 河北农大动物医院怎么样">河北农大动物医院 河北农大动物医院怎么样</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-5-free-v2ray.htm" title="9月5日|最高速度20M/S，2024最新V2ray/Clash/Shadowrocket/SSR免费节点高速订阅链接">9月5日|最高速度20M/S，2024最新V2ray/Clash/Shadowrocket/SSR免费节点高速订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -166,7 +167,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -202,6 +203,15 @@
     <footer class="footer pt-160">
         <div class="container">
             <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                 <p>WindowsClash节点订阅站 版权所有</p>
                 <p>Powered by WordPress</p>
             </div>
