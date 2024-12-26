@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-30852.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>. NET Core Razor动态菜单实现_在线工具</title>
+        <meta name="description" content="  2.1  建立渲染内容填充方法    2.2  建立分部视图  2.3 调用分布视图 目录  			 准备 1.框架    .netcore  版本 yishaadmin开源框架 2.模板    " />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                                                        <a class="navbar-brand" href="/">
+                                Windows Clash
+                            </a>
+                                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="#">关于</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#">联系</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>. NET Core Razor动态菜单实现_在线工具</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img href="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> <a href="#title-0" title="  2.1  建立渲染内容填充方法">  2.1  建立渲染内容填充方法</a></li> <li><i class="be be-arrowright"></i> <a href="#title-1" title="  2.2  建立分部视图">  2.2  建立分部视图</a></li> <li><i class="be be-arrowright"></i> <a href="#title-2" title="2.3 调用分布视图">2.3 调用分布视图</a></li> </ul><span class="log-zd"><span class="log-close"><a title="隐藏目录"><i class="be be-cross"></i><strong>目录</strong></a></span></span></div>  			</div> <h2>准备</h2> <p>1.框架</p> <p>   .netcore  版本 yishaadmin开源框架</p> <p>2.模板 </p> <p>   本文模板使用adminlte3.0，文档地址<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://adminlte.io/docs/3.0/"  target="_blank"  rel="nofollow">https://adminlte.io/docs/3.0/</a></p> <p>3.菜单表关键字段 </p> <p>　　id 表主键(当前菜单)<br />　　ParentId  父级ID（父级菜单 为0时为顶级菜单，也可能为内容）<br />　　MenuUrl  菜单地址(只有页面有地址，本身菜单是空)<br />　　MenuType 菜单类型（1是菜单 2是页面 3是按钮）<br />　　MenuIcon 图标样式</p> <p>4.菜单表实体</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> Newtonsoft.Json; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Collections.Generic; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.ComponentModel.DataAnnotations.Schema; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Linq; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Text; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> System.Threading.Tasks; </span><span style="color: rgba(0, 0, 255, 1)">using</span><span style="color: rgba(0, 0, 0, 1)"> YiSha.Util;  </span><span style="color: rgba(0, 0, 255, 1)">namespace</span><span style="color: rgba(0, 0, 0, 1)"> YiSha.Entity.SystemManage {     [Table(</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">SysMenu</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">)]     </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)"> MenuEntity : BaseExtensionEntity     {         [JsonConverter(</span><span style="color: rgba(0, 0, 255, 1)">typeof</span><span style="color: rgba(0, 0, 0, 1)">(StringJsonConverter))]         </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">long</span>? ParentId { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> MenuName { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> MenuIcon { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> MenuUrl { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> MenuTarget { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">int</span>? MenuSort { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">int</span>? MenuType { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">int</span>? MenuStatus { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }         </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> Authorize { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> Remark { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }          [NotMapped]         </span><span style="color: rgba(0, 0, 255, 1)">public</span> <span style="color: rgba(0, 0, 255, 1)">string</span> ParentName { <span style="color: rgba(0, 0, 255, 1)">get</span>; <span style="color: rgba(0, 0, 255, 1)">set</span><span style="color: rgba(0, 0, 0, 1)">; }     } }</span></pre> </div> <h2>开始开发</h2> <p>　　本文是由于框架内置菜单不支持顶级菜单显示为内容，以及菜单最多只支持三级菜单的问题，故进行了调整。</p> <h3>1.实现思路</h3> <p> 　　下图1区域渲染为菜单，菜单通过点击URL将内容填充到2区域。  </p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220506/d41cf7a309b271b7a6ab1403bf993d20.jpg" alt=". NET Core Razor动态菜单实现_在线工具"></p> <h3> 2.编码</h3> <span class="directory"></span><h4 id="title-0">  2.1  建立渲染内容填充方法</h4> <p>         将传进来的url通过ajax调用最终渲染到内容区域（id为#Content的Div中），其中beforeSend方法显示Loadding 可根据需要自行调整。url为{area:exists}/{controller=Home}/{action=Index}以及{controller=Home}/{action=Index}根据框架配置填写至菜单</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">  function LoadContent(url) {         </span><span style="color: rgba(0, 0, 255, 1)">if</span> (url == <span style="color: rgba(0, 0, 255, 1)">null</span> || url == <span style="color: rgba(128, 0, 0, 1)">""</span><span style="color: rgba(0, 0, 0, 1)">)             </span><span style="color: rgba(0, 0, 255, 1)">return</span><span style="color: rgba(0, 0, 0, 1)">;          $.ajax({             url: url,             beforeSend: function (XHR) {                 $.blockUI({ message: </span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">&lt;div class="loaderbox"&gt;&lt;div class="loading-activity"&gt;&lt;/div&gt; </span><span style="color: rgba(128, 0, 0, 1)">'</span> <br>                 + <span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">加载中...</span><span style="color: rgba(128, 0, 0, 1)">"</span> + <span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">&lt;/div&gt;</span><span style="color: rgba(128, 0, 0, 1)">'</span>, css: { border: <span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">none</span><span style="color: rgba(128, 0, 0, 1)">"</span>, backgroundColor: <span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(128, 0, 0, 1)">transparent</span><span style="color: rgba(128, 0, 0, 1)">'</span><span style="color: rgba(0, 0, 0, 1)"> } });             },             success: function (data) {                 $(</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">#Content</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">).html(data);                 setTimeout(function () { $.unblockUI(); }, </span><span style="color: rgba(128, 0, 128, 1)">100</span><span style="color: rgba(0, 0, 0, 1)">);             },             error: function (data, status, e) {                 $(</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">#Content</span><span style="color: rgba(128, 0, 0, 1)">"</span>).html(<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">页面加载失败,</span><span style="color: rgba(128, 0, 0, 1)">"</span> + data.status + <span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">,</span><span style="color: rgba(128, 0, 0, 1)">"</span> + url + <span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">&lt;br /&gt;</span><span style="color: rgba(128, 0, 0, 1)">"</span> +<span style="color: rgba(0, 0, 0, 1)"> data.responseText);                 setTimeout(function () { $.unblockUI(); }, </span><span style="color: rgba(128, 0, 128, 1)">100</span><span style="color: rgba(0, 0, 0, 1)">);             }         });   }</span></pre> </div> <span class="directory"></span><h4 id="title-1">  2.2  建立分部视图</h4> <p>       <span style="font-size: 12px">通过建立分部视图MenuTree，循环传入的菜单，初始化时先获取父级ID（ParentId）为0并且类别（MenuType）不为按钮的菜单集合进行循环，根据menuEntity.MenuUrl判断是否为页面，如果依然为菜单则使用Html.PartialAsync("MenuTree"）调用自身来实现递归，第二次则根据ViewData["Menu"]传入的当前id作为父级id来寻找子集，直到寻找到最后的层级。</span></p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">@using System.Collections.Generic @using YiSha.Entity.SystemManage; @model List</span>&lt;MenuEntity&gt;<span style="color: rgba(0, 0, 0, 1)">   @{     </span><span style="color: rgba(0, 0, 255, 1)">if</span><span style="color: rgba(0, 0, 0, 1)"> (Model.Any())     {         </span><span style="color: rgba(0, 0, 255, 1)">long</span> id = <span style="color: rgba(128, 0, 128, 1)">0L</span><span style="color: rgba(0, 0, 0, 1)">;         </span><span style="color: rgba(0, 0, 255, 1)">var</span> menu = ViewData[<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Menu</span><span style="color: rgba(128, 0, 0, 1)">"</span>] <span style="color: rgba(0, 0, 255, 1)">as</span><span style="color: rgba(0, 0, 0, 1)"> MenuEntity;         </span><span style="color: rgba(0, 0, 255, 1)">if</span> (menu != <span style="color: rgba(0, 0, 255, 1)">null</span><span style="color: rgba(0, 0, 0, 1)">)           id </span>=<span style="color: rgba(0, 0, 0, 1)"> menu.Id.Value;          @foreach (</span><span style="color: rgba(0, 0, 255, 1)">var</span> menuEntity <span style="color: rgba(0, 0, 255, 1)">in</span> Model.Where(o =&gt; o.ParentId == id &amp;&amp; o.MenuType != (<span style="color: rgba(0, 0, 255, 1)">int</span><span style="color: rgba(0, 0, 0, 1)">)MenuTypeEnum.Button))         {             </span><span style="color: rgba(0, 0, 255, 1)">var</span> icno = <span style="color: rgba(0, 0, 255, 1)">string</span>.IsNullOrEmpty(menuEntity.MenuIcon) ? <span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">fa fa-comment</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)"> : menuEntity.MenuIcon;             @if (</span>!<span style="color: rgba(0, 0, 255, 1)">string</span><span style="color: rgba(0, 0, 0, 1)">.IsNullOrEmpty(menuEntity.MenuUrl))             {                </span>&lt;li <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-item</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                    &lt;a href=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">#</span><span style="color: rgba(128, 0, 0, 1)">"</span> <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-link</span><span style="color: rgba(128, 0, 0, 1)">"</span> onclick=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">LoadContent('@menuEntity.MenuUrl')</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                        &lt;i <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-icon @icno</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;&lt;/i&gt;                        &lt;p&gt;<span style="color: rgba(0, 0, 0, 1)">                            @menuEntity.MenuName                        </span>&lt;/p&gt;                    &lt;/a&gt;                &lt;/li&gt;<span style="color: rgba(0, 0, 0, 1)">             }             </span><span style="color: rgba(0, 0, 255, 1)">else</span><span style="color: rgba(0, 0, 0, 1)">             {                 ViewData[</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Menu</span><span style="color: rgba(128, 0, 0, 1)">"</span>] =<span style="color: rgba(0, 0, 0, 1)"> menuEntity;                 </span>&lt;li <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-item</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                     &lt;a href=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">#</span><span style="color: rgba(128, 0, 0, 1)">"</span> <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-link</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                     &lt;i <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-icon @icno</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;&lt;/i&gt;                     &lt;p&gt;<span style="color: rgba(0, 0, 0, 1)">                         @menuEntity.MenuName                         </span>&lt;i <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">fas fa-angle-left right</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;&lt;/i&gt;                     &lt;/p&gt;                     &lt;/a&gt;                     &lt;ul <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav nav-treeview</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;<span style="color: rgba(0, 0, 0, 1)">                          @await Html.PartialAsync(</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">MenuTree</span><span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(0, 0, 0, 1)">,                          Model,</span><span style="color: rgba(0, 0, 255, 1)">new</span><span style="color: rgba(0, 0, 0, 1)"> ViewDataDictionary(ViewData))                     </span>&lt;/ul&gt;                &lt;/li&gt;<span style="color: rgba(0, 0, 0, 1)">             }          }     } }</span></pre> </div> <span class="directory"></span><h4 id="title-2">2.3 调用分布视图</h4> <div class="cnblogs_code"> <pre>     &lt;aside <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">main-sidebar sidebar-dark-primary elevation-4</span><span style="color: rgba(128, 0, 0, 1)">"</span> style=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">width:200px;position:fixed</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;             &lt;!-- Brand Logo --&gt;                          &lt;!-- Sidebar --&gt;             &lt;div <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">sidebar</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                  &lt;!-- Sidebar Menu --&gt;                 &lt;nav <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">mt-2</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                     &lt;ul <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav nav-pills nav-sidebar flex-column</span><span style="color: rgba(128, 0, 0, 1)">"</span> data-widget=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">treeview</span><span style="color: rgba(128, 0, 0, 1)">"</span> role=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">menu</span><span style="color: rgba(128, 0, 0, 1)">"</span> data-accordion=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">false</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                         &lt;!-- Add icons to the links <span style="color: rgba(0, 0, 255, 1)">using</span> the .nav-icon <span style="color: rgba(0, 0, 255, 1)">class</span><span style="color: rgba(0, 0, 0, 1)">     with font</span>-awesome or any other icon font library --&gt;                          &lt;li <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">nav-header</span><span style="color: rgba(128, 0, 0, 1)">"</span> style=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">font-size:1.0rem</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;                             &lt;img src=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">~/yisha/img/logo1.png</span><span style="color: rgba(128, 0, 0, 1)">"</span> style=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">width: 30px; height: 30px; </span><span style="color: rgba(128, 0, 0, 1)">"</span> /&gt;<span style="color: rgba(0, 0, 0, 1)">                             任务管理系统                         </span>&lt;/li&gt;<span style="color: rgba(255, 0, 0, 1)">                          @await Html.PartialAsync("MenuTree", Model)                     </span>&lt;/ul&gt;                 &lt;/nav&gt;                 &lt;!-- /.sidebar-menu --&gt;             &lt;/div&gt;             &lt;!-- /.sidebar --&gt;         &lt;/aside&gt;          &lt;!-- Content Wrapper. Contains page content --&gt;         &lt;div <span style="color: rgba(0, 0, 255, 1)">class</span>=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">content-wrapper</span><span style="color: rgba(128, 0, 0, 1)">"</span> id=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">mainhead</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;             &lt;div id=<span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">Content</span><span style="color: rgba(128, 0, 0, 1)">"</span>&gt;              &lt;/div&gt;         &lt;/div&gt;</pre> </div> <p> </p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30386.htm">猫咪3针疫苗间隔多久打第三针呢怎么打（猫咪3针疫苗间隔多久打第三针呢怎么打的）</a></p>
+                                        <p>下一个：<a href="/news/article-30853.htm">开一家动物医院需要多久才能开（开一个动物医院需要多少钱）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-node-subscribe-links.htm" title="12月8日|最高速度21.9M/S，2024最新V2ray/Shadowrocket/SSR/Clash免费节点高速订阅链接，翻墙机场推荐">12月8日|最高速度21.9M/S，2024最新V2ray/Shadowrocket/SSR/Clash免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-shadowrocket-node.htm" title="10月26日|最高速度21.4M/S，2024最新Clash/V2ray/SSR/Shadowrocket免费节点高速订阅链接，翻墙机场推荐">10月26日|最高速度21.4M/S，2024最新Clash/V2ray/SSR/Shadowrocket免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-17-free-clash.htm" title="9月17日|最高速度20.4M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接">9月17日|最高速度20.4M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-free-subscribe-node.htm" title="11月1日|最高速度19.1M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐">11月1日|最高速度19.1M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-13-node-share.htm" title="10月13日|最高速度22.5M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接">10月13日|最高速度22.5M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-11-clash-v2ray-ss-ssr.htm" title="9月11日|最高速度19.5M/S，2024最新Clash/Shadowrocket/SSR/V2ray免费节点高速订阅链接">9月11日|最高速度19.5M/S，2024最新Clash/Shadowrocket/SSR/V2ray免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-27-free-node-subscribe.htm" title="7月27日|最高速度18.9M/S，2024最新Clash/Shadowrocket/SSR/V2ray免费节点高速订阅链接">7月27日|最高速度18.9M/S，2024最新Clash/Shadowrocket/SSR/V2ray免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-clash-v2ray-ss-ssr.htm" title="11月21日|最高速度18.4M/S，2024最新SSR/Clash/Shadowrocket/V2ray免费节点高速订阅链接，翻墙机场推荐">11月21日|最高速度18.4M/S，2024最新SSR/Clash/Shadowrocket/V2ray免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-23387.htm" title="狗粮加工企业排名前十（寻求狗粮加工合作厂家）">狗粮加工企业排名前十（寻求狗粮加工合作厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-19264.htm" title="全国兽药100强企业名单 全国兽药100强企业名单叫什么">全国兽药100强企业名单 全国兽药100强企业名单叫什么</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
