@@ -8,7 +8,35 @@
     <title>C\C++ 中 malloc、calloc、realloc 函数的用法</title>
         <meta name="description" content="转自：https://www.jianshu.com/p/d6f209b8796d 前言 C\C++提供了底层的内存操作，为程序提供了强大的能力。在使用malloc() calloc() reallo" />
         <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-27109.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="C\C++ 中 malloc、calloc、realloc 函数的用法" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/d73c917f59f033778c8400c070ffb33c.webp" />
+        <meta property="og:release_date" content="2024-12-17T10:14:21" />
+    <meta property="og:updated_time" content="2024-12-17T10:14:21" />
+        <meta property="og:description" content="转自：https://www.jianshu.com/p/d6f209b8796d 前言 C\C++提供了底层的内存操作，为程序提供了强大的能力。在使用malloc() calloc() reallo" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C\C++ 中 malloc、calloc、realloc 函数的用法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Place favicon.ico in the root directory -->
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
@@ -120,7 +148,7 @@
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
                     <div class="hero-image text-center text-lg-end">
-                        <img href="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -146,16 +174,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-8-30-free-ssr-subscribe.htm" title="8月30日|最高速度22.4M/S，2024最新V2ray/Clash/SSR/Shadowrocket免费节点高速订阅链接">8月30日|最高速度22.4M/S，2024最新V2ray/Clash/SSR/Shadowrocket免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-high-speed-nodes.htm" title="11月27日|最高速度19.5M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐">11月27日|最高速度19.5M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-1-free-clash.htm" title="8月1日|最高速度18.5M/S，2024最新SSR/Clash/V2ray/Shadowrocket免费节点高速订阅链接">8月1日|最高速度18.5M/S，2024最新SSR/Clash/V2ray/Shadowrocket免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-26-node-share.htm" title="8月26日|最高速度19.2M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接">8月26日|最高速度19.2M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-shadowrocket-node.htm" title="12月5日|最高速度18.3M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐">12月5日|最高速度18.3M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-27-clash-node-daily-updates.htm" title="8月27日|最高速度22.7M/S，2024最新SSR/Clash/V2ray/Shadowrocket免费节点高速订阅链接">8月27日|最高速度22.7M/S，2024最新SSR/Clash/V2ray/Shadowrocket免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-21-clash-node.htm" title="8月21日|最高速度20.4M/S，2024最新V2ray/SSR/Shadowrocket/Clash免费节点高速订阅链接">8月21日|最高速度20.4M/S，2024最新V2ray/SSR/Shadowrocket/Clash免费节点高速订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-11-node-share-links.htm" title="12月11日|最高速度20.4M/S，2024最新V2ray/Clash/Shadowrocket/SSR免费高速订阅链接，手机翻墙机场推荐">12月11日|最高速度20.4M/S，2024最新V2ray/Clash/Shadowrocket/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-28506.htm" title="宠物猫疫苗可以自己打么（宠物猫打疫苗可以自己打吗）">宠物猫疫苗可以自己打么（宠物猫打疫苗可以自己打吗）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-12-shadowrocket-node.htm" title="9月12日|最高速度18.6M/S，2024最新Clash/SSR/V2ray/Shadowrocket免费节点高速订阅链接">9月12日|最高速度18.6M/S，2024最新Clash/SSR/V2ray/Shadowrocket免费节点高速订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-clash-node.htm" title="1月17日|最高速度18.9M/S，2025最新Clash/V2ray/Shadowrocket/SSR免费高速订阅链接，手机翻墙机场推荐">1月17日|最高速度18.9M/S，2025最新Clash/V2ray/Shadowrocket/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-node-subscribe.htm" title="1月7日|最高速度19.6M/S，2025最新V2ray/Shadowrocket/Clash/SSR免费高速订阅链接，手机翻墙机场推荐">1月7日|最高速度19.6M/S，2025最新V2ray/Shadowrocket/Clash/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-clash-subscribe.htm" title="11月7日|最高速度21.8M/S，2024最新Shadowrocket/V2ray/SSR/Clash免费节点高速订阅链接，翻墙机场推荐">11月7日|最高速度21.8M/S，2024最新Shadowrocket/V2ray/SSR/Clash免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-clash-v2ray-ss-ssr.htm" title="1月8日|最高速度20.9M/S，2025最新Clash/Shadowrocket/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐">1月8日|最高速度20.9M/S，2025最新Clash/Shadowrocket/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-node-subscribe-links.htm" title="11月20日|最高速度18M/S，2024最新V2ray/Shadowrocket/SSR/Clash免费节点高速订阅链接，翻墙机场推荐">11月20日|最高速度18M/S，2024最新V2ray/Shadowrocket/SSR/Clash免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-24779.htm" title="天津宠物领养中心官网地址电话（天津宠物领养中心官网地址电话查询）">天津宠物领养中心官网地址电话（天津宠物领养中心官网地址电话查询）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-free-clash-subscribe.htm" title="12月24日|最高速度22.4M/S，2024最新V2ray/Clash/SSR/Shadowrocket免费高速订阅链接，手机翻墙机场推荐">12月24日|最高速度22.4M/S，2024最新V2ray/Clash/SSR/Shadowrocket免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-node-subscribe-links.htm" title="12月26日|最高速度22.2M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">12月26日|最高速度22.2M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-clash-windows.htm" title="11月22日|最高速度22.2M/S，2024最新SSR/Shadowrocket/V2ray/Clash免费节点高速订阅链接，翻墙机场推荐">11月22日|最高速度22.2M/S，2024最新SSR/Shadowrocket/V2ray/Clash免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-46975.htm" title="兽用疫苗运输与储存规范（兽用疫苗管理）">兽用疫苗运输与储存规范（兽用疫苗管理）</a></li>
                     </ul>
     </div>
 </div>
@@ -167,31 +195,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
