@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-53676.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>JAVA初始化自定义类的数组</title>
+        <meta name="description" content="先摆结论： ClassName[] classes=new ClassName[]{ 	new ClassName(/*参数列表*/), 	//其余的初始化操作 }  今天我想初始化一个自定义的JAV" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-53676.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="JAVA初始化自定义类的数组" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/71dabafea58601d21efd9661086d8245.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:05:06" />
+    <meta property="og:updated_time" content="2025-02-09T10:05:06" />
+        <meta property="og:description" content="先摆结论： ClassName[] classes=new ClassName[]{ 	new ClassName(/*参数列表*/), 	//其余的初始化操作 }  今天我想初始化一个自定义的JAV" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JAVA初始化自定义类的数组">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>JAVA初始化自定义类的数组</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>先摆结论：</strong></p> <pre><code class="prism language-java">ClassName<span class="token punctuation">[</span><span class="token punctuation">]</span> classes<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ClassName</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{<!-- --></span> 	<span class="token keyword">new</span> <span class="token class-name">ClassName</span><span class="token punctuation">(</span><span class="token comment">/*参数列表*/</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 	<span class="token comment">//其余的初始化操作</span> <span class="token punctuation">}</span> </code></pre> <p>今天我想初始化一个自定义的JAVA类数组，结果发现不能像初始化C++的结构体，或者JAVA中初始化一个基本类型，如int那样：</p> <pre><code class="prism language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{<!-- --></span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span> </code></pre> <p>直接在中括号后的大括号里写参数列表会被编译器认为是非法的初始化操作。在stackoverflow的这篇回答中找到了答案<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://stackoverflow.com/questions/38946025/how-to-initialize-array-of-custom-class-objects"  rel="nofollow">How to initialize array of custom class objects? [duplicate]<br /></a><br /> 这是因为JAVA中每个自定义类必须通过new操作进行初始化，否则只是一个引用（reference），可以对应的理解为C++中的指针（但是两者有区别）。只有new操作后才能实例化成一个对象，并赋以相应的值。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53128.htm">动物疫苗的使用方法及注意事项视频教程大全 动物疫苗的使用方法及注意事项视频教程大全图片</a></p>
+                                        <p>下一个：<a href="/news/article-53677.htm">广州宠物领养中心电话地址是多少（广州宠物领养中心电话地址是多少号）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-20183.htm" title="脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结">脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结</a></li>
+                        <li class="py-2"><a href="/news/article-21097.htm" title="宠物粮市场前景预测分析论文（宠物粮市场调查）">宠物粮市场前景预测分析论文（宠物粮市场调查）</a></li>
+                        <li class="py-2"><a href="/news/article-43010.htm" title="常州爱宠居宠物诊所（常州爱宠居宠物诊所地址）">常州爱宠居宠物诊所（常州爱宠居宠物诊所地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-clash-v2ray-ss-ssr.htm" title="1月8日|最高速度20.9M/S，2025最新Clash/Shadowrocket/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐">1月8日|最高速度20.9M/S，2025最新Clash/Shadowrocket/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-50994.htm" title="动物医院招聘条件要求（动物医院人员配置）">动物医院招聘条件要求（动物医院人员配置）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-high-speed-nodes.htm" title="2月5日|最高速度19.8M/S，2025最新Shadowrocket/SSR/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐">2月5日|最高速度19.8M/S，2025最新Shadowrocket/SSR/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-node-subscribe-links.htm" title="2月3日|最高速度21.3M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">2月3日|最高速度21.3M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-48937.htm" title="一所动物医院的英文翻译（一所动物医院的英文翻译）">一所动物医院的英文翻译（一所动物医院的英文翻译）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-clash-windows.htm" title="11月23日|最高速度18.2M/S，2024最新Clash/Shadowrocket/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐">11月23日|最高速度18.2M/S，2024最新Clash/Shadowrocket/V2ray/SSR免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-45491.htm" title="PostgreSQL执行计划：Bitmap scan VS index only scan">PostgreSQL执行计划：Bitmap scan VS index only scan</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
