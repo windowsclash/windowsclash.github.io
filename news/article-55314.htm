@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-55314.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Java之LocalDate,LocalTime，LocalDateTime等时间</title>
+        <meta name="description" content="一、介绍   LocalDate：是一个不可变的日期时间对象，代表一个日期，通常被视为年-月-日；此类是不可变的并且是线程安全的。   LocalTime：是一个不可变的日期时间对象，代表一个时间，通" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-55314.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="Java之LocalDate,LocalTime，LocalDateTime等时间" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/71dabafea58601d21efd9661086d8245.webp" />
+        <meta property="og:release_date" content="2025-02-12T09:07:56" />
+    <meta property="og:updated_time" content="2025-02-12T09:07:56" />
+        <meta property="og:description" content="一、介绍   LocalDate：是一个不可变的日期时间对象，代表一个日期，通常被视为年-月-日；此类是不可变的并且是线程安全的。   LocalTime：是一个不可变的日期时间对象，代表一个时间，通" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java之LocalDate,LocalTime，LocalDateTime等时间">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>Java之LocalDate,LocalTime，LocalDateTime等时间</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>一、介绍</p> <ul> <li> <p>LocalDate：是一个不可变的日期时间对象，代表一个日期，通常被视为年-月-日；此类是不可变的并且是线程安全的。</p> </li> <li> <p>LocalTime：是一个不可变的日期时间对象，代表一个时间，通常被视为时分秒。时间以纳秒精度表示；此类是不可变的并且是线程安全的。</p> </li> <li> <p>LocalDateTime：是一个不变的日期时间对象，代表一个日期时间，通常被视为年-月-日-时-分-秒。也可以访问其他日期和时间字段，例如，一年中的某天，一周中的某天和一周中的某周。时间以纳秒精度表示；此类是不可变的并且是线程安全的。</p> </li> </ul> <p>二、具体例子如下：</p> <p>1.获取当前时间</p> <pre><code>public static void main(String[] args) { //获取当前时间 LocalDateTime localDateTime = LocalDateTime.now(); System.out.println("本地当前日期时间："+localDateTime); System.out.println(); //设置时区为美国纽约 System.out.println("美国当前日期时间："+LocalDateTime.now(ZoneId.of("America/New_York"))); System.out.println();}</code></pre> <p>2.获取当前时间毫秒数/时间戳</p> <pre><code>public static void main(String[] args) {   //获取当前时间   LocalDateTime localDateTime = LocalDateTime.now();   System.out.println("本地当前日期时间："+localDateTime);      long millisecond = localDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();   System.out.println("获取时间戳："+millisecond/1000);   System.out.println("获取毫秒数："+millisecond);   System.out.println(); }</code></pre> <p>3.获取年，月，日或者星期几</p> <pre><code>public static void main(String[] args) {   //获取当前时间   LocalDateTime  localDateTime = LocalDateTime.now();   System.out.println("本地当前日期时间："+localDateTime);      //获取年、月、日、星期几   int year = localDateTime.getYear();   System.out.println("获取年份（第一种方式）："+year);   year = localDateTime.get(ChronoField.YEAR);   System.out.println("获取年份（第二种方式）："+year);   System.out.println();       int month = localDateTime.getMonthValue();   System.out.println("获取月份（第一种方式）："+month);   month = localDateTime.getMonth().getValue();   System.out.println("获取月份（第二种方式）："+month);   month = localDateTime.get(ChronoField.MONTH_OF_YEAR);   System.out.println("获取月份（第三种方式）："+month);   System.out.println();      int dayOfWeek = localDateTime.getDayOfWeek().getValue();   System.out.println("获取星期几(第一种方式)："+dayOfWeek);   dayOfWeek = localDateTime.get(ChronoField.DAY_OF_WEEK);   System.out.println("获取星期几(第二种方式)："+dayOfWeek);   System.out.println();      int dayOfMonth = localDateTime.getDayOfMonth();   System.out.println("获取本月当日(第一种方式)："+dayOfMonth);   dayOfMonth = localDateTime.get(ChronoField.DAY_OF_MONTH);   System.out.println("获取本月当日(第二种方式)："+dayOfMonth);   System.out.println();      int dayOfYear = localDateTime.getDayOfYear();   System.out.println("获取本年当日(第一种方式)："+dayOfYear);   dayOfYear = localDateTime.get(ChronoField.DAY_OF_YEAR);   System.out.println("获取本年当日(第二种方式)："+dayOfYear);    }</code></pre> <p>4.日期时间与字符串相互转换</p> <pre><code>private static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss"; private static final String YYYYMMDD_HH_MM_SS = "yyyy/MM/dd HH:mm:ss";  public static void main(String[] args) { //获取当前时间 LocalDateTime  localDateTime = LocalDateTime.now(); System.out.println("本地当前日期时间："+localDateTime); //日期与字符串相互转换 //日期转字符串 String dateTimeStr = localDateTime.format(DateTimeFormatter.ofPattern(YYYY_MM_DD_HH_MM_SS)); System.out.println("日期时间格式化成字符串后："+dateTimeStr); //字符串转日期 String convertTime = "2020/12/12 12:12:12"; LocalDateTime convertLocalDateTime = LocalDateTime.parse(convertTime,DateTimeFormatter.ofPattern(YYYYMMDD_HH_MM_SS)); System.out.println("由字符串转换成的日期时间为："+convertLocalDateTime); }</code></pre> <p>5.Date与LocalDateTime相互转换</p> <pre><code>private static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss"; private static final String YYYYMMDD_HH_MM_SS = "yyyy/MM/dd HH:mm:ss";  public static void main(String[] args) { //获取当前时间 LocalDateTime  localDateTime = LocalDateTime.now(); System.out.println("本地当前日期时间："+localDateTime); //Date转换成LocalDateTime Date date = new Date(); LocalDateTime  date2LocalDateTime = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime(); System.out.println("Date转换成LocalDateTime后&gt;&gt;&gt;&gt;"+date2LocalDateTime);    //LocalDateTime转换成Date Date localDateTime2Date = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant()); System.out.println("LocalDateTime转换成Date后&gt;&gt;&gt;&gt;"+localDateTime2Date); System.out.println("格式化一下&gt;&gt;&gt;&gt;"+FastDateFormat.getInstance(YYYY_MM_DD_HH_MM_SS).format(localDateTime2Date)); }</code></pre> <p>6.获取偏移日期时间</p> <div> <pre><code>public static void main(String[] args) { //获取当前时间 LocalDateTime localDateTime = LocalDateTime.now(ZoneId.systemDefault()); System.out.println("本地当前日期时间："+localDateTime); //获取偏移时间 //偏移天(正数：往后偏移；负数：往过去时间偏移) System.out.println("明日此时："+localDateTime.plusDays(1)); System.out.println("明日此时1："+localDateTime.minusDays(-1)); System.out.println("前天此时："+localDateTime.plusDays(-2)); //偏移时 System.out.println("当前时间后2个小时："+localDateTime.plusHours(2)); System.out.println("当前时间前5个小时："+localDateTime.plusHours(-5)); //偏移年 System.out.println("去年此时："+localDateTime.plusYears(-1)); //偏移月 System.out.println("下月此时："+localDateTime.plusMonths(1)); //偏移周 System.out.println("上周此时："+localDateTime.plusWeeks(-1)); }   //不可变性LocalDateTime  localDateTime2 = localDateTime.plusMonths(3);System.out.println(localDateTime);//默认输出当前时间System.out.println(localDateTime2);//默认输出当前时间的月份+3//with表示带属性LocalDateTime localDateTime3 =localDateTime.withHour(4);System.out.println(localDateTime);//输出当前时间System,out,println(LocalDateTime3);当前时间的小时数为4.</code></pre> <p>三、SimpleDataFormat</p> <p>关于时间对象,我们在页面展示时,可能会想要不同的格式输出,常用的就是通过java.text.SimpleDateFormat设置不同的格式:</p> <p>yyyy:年</p> <p>MM:月</p> <p>z:时区</p> <p>dd : 日</p> <p>HH : 小时(24小时制)</p> <p>hh : 小时(12小时制)</p> <p>mm : 分钟</p> <p>ss : 秒</p> <p>S : 毫秒</p> <p>D : 一年中的第一几天</p> <p>F : 一个月中的第几个星期(通过这个月的天数除7,例如5号那就是属于第一个星期)</p> <p>W : 一个月中的第几个星期(根据实际情况计算)</p> <p>w : 一年中的第几个星期</p> <pre><code>SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); System.out.println(sdf.format(new Date()));//2019-08-05 14:56:23 sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a"); System.out.println(sdf.format(new Date()));//2019-08-05 02:56:23 下午 sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");// System.out.println(sdf.format(new Date()));//2019-08-05 03:10:32 下午 sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:S"); System.out.println(sdf.format(new Date()));//2019-08-05 15:10:32:186 sdf = new SimpleDateFormat("yyyy-MM-dd 一年中的第D天"); System.out.println(sdf.format(new Date()));//2019-08-05 一年中的第217天 sdf = new SimpleDateFormat("yyyy-MM-dd E"); System.out.println(sdf.format(new Date()));//2019-08-05 星期一 sdf = new SimpleDateFormat("yyyy-MM-dd M月中的第W个星期"); System.out.println(sdf.format(new Date()));//2019-08-05 8月中的第2个星期 sdf = new SimpleDateFormat("yyyy-MM-dd M月中的第F个星期"); System.out.println(sdf.format(new Date()));//2019-08-05 8月中的第1个星期 sdf = new SimpleDateFormat("yyyy-MM-dd 一年中的第w个星期"); System.out.println(sdf.format(new Date()));//2019-08-05 一年中的第32个星期 sdf = new SimpleDateFormat("yyyy-MM-dd z"); System.out.println(sdf.format(new Date()));//2019-08-05 CST</code></pre> <p>四、DataTimeFormat</p> <p>&nbsp;例如：将字符串“2017-08-18”转化为对应的Java.sql.Date类的对象。</p> <p>.. 类似于SimpleDateFormat</p> <p>方式一：预定义的标准格式。如：ISO_LOCAL_DATE_TIME;ISO_LOCAL_DATE;</p> <p>方式二:本地化相关的格式。如：ofLocalizedDateTime(FormatStyle.LONG);</p> <p>方式三：自定义的格式。如：ofPattern("yyyy-MM-dd hh:mm:ss E");</p> <pre><code>public void test3(){ //方式一：预定义的标准格式 DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME; //格式化：日期--&gt;字符串 DateTimeFormatter localDateTime = DateTimeFormatter.now(); String str1 = formatter.format(localDateTime); } //解析：字符串--&gt;日期 TemporalAccessor parse = formatter.parse(test:"当前时间")； System.out.println(parse);   //方式二： 本地化相关的格式，如：ofLocalizedDateTime() FormatStyle.Long/FormatStyle.MEDIUM/FormatStyle.SHORT:适用于LocalDateTime DateTimeFormatter formatter2 = DateTimeFormatter.ofLocalizedDate(FormatStyle,Full); String str2=formatter2.format(LocalDate.now()); System.out.println(str2); //只输出当前日期  //自定义的格式 ofpattern("yyyy-MM-dd hh:mm:ss E")//里面字符串形式 DateTimeFormatter formatter3=DateTimeFormattern.ofPattern("yyyy-MM-dd hh:mm:ss E"); //格式化 String str3 = formatter3.format(LocalDateTime.now()); System.out.println(str3); formatter3.parse("时间")；</code></pre> <p>get!</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55313.htm">笔记：Linux命令（目录和文件管理）</a></p>
+                                        <p>下一个：<a href="/news/article-55850.htm">Spring Security教程（13）&#8212;- 验证码功能的实现</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-node-subscribe-links.htm" title="2月3日|最高速度21.3M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">2月3日|最高速度21.3M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-free-clash-subscribe.htm" title="1月14日|最高速度19.3M/S，2025最新Clash/V2ray/SSR/Shadowrocket免费高速订阅链接，手机翻墙机场推荐">1月14日|最高速度19.3M/S，2025最新Clash/V2ray/SSR/Shadowrocket免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-30852.htm" title=". NET Core Razor动态菜单实现_在线工具">. NET Core Razor动态菜单实现_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-24779.htm" title="天津宠物领养中心官网地址电话（天津宠物领养中心官网地址电话查询）">天津宠物领养中心官网地址电话（天津宠物领养中心官网地址电话查询）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-node-subscribe.htm" title="1月7日|最高速度19.6M/S，2025最新V2ray/Shadowrocket/Clash/SSR免费高速订阅链接，手机翻墙机场推荐">1月7日|最高速度19.6M/S，2025最新V2ray/Shadowrocket/Clash/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-v2ray.htm" title="1月28日|最高速度22.9M/S，2025最新Clash/Shadowrocket/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐">1月28日|最高速度22.9M/S，2025最新Clash/Shadowrocket/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-25249.htm" title="SDS-redis动态字符串">SDS-redis动态字符串</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-clash-v2ray-ss-ssr.htm" title="12月17日|最高速度18M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费高速订阅链接，手机翻墙机场推荐">12月17日|最高速度18M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-47461.htm" title="动物疫苗法案（山东齐鲁动物疫苗）">动物疫苗法案（山东齐鲁动物疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-clash-subscribe.htm" title="11月7日|最高速度21.8M/S，2024最新Shadowrocket/V2ray/SSR/Clash免费节点高速订阅链接，翻墙机场推荐">11月7日|最高速度21.8M/S，2024最新Shadowrocket/V2ray/SSR/Clash免费节点高速订阅链接，翻墙机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
