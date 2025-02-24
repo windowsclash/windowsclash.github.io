@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-62175.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>visual studio 使用cmake构建项目并远程连接虚拟机centos7</title>
+        <meta name="description" content="初学踩了点坑，记录下初步环境搭建  https://visualstudio.microsoft.com/zh-hans/ 只需勾选图中"使用c++进行lunix和嵌入式开发"，其他看个人需求勾选即可" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-62175.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="visual studio 使用cmake构建项目并远程连接虚拟机centos7" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/7eb4a945149eba48fbcdfc4938366550.webp" />
+        <meta property="og:release_date" content="2025-02-24T09:16:15" />
+    <meta property="og:updated_time" content="2025-02-24T09:16:15" />
+        <meta property="og:description" content="初学踩了点坑，记录下初步环境搭建  https://visualstudio.microsoft.com/zh-hans/ 只需勾选图中"使用c++进行lunix和嵌入式开发"，其他看个人需求勾选即可" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="visual studio 使用cmake构建项目并远程连接虚拟机centos7">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>visual studio 使用cmake构建项目并远程连接虚拟机centos7</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>初学踩了点坑，记录下初步环境搭建</p> </h1> <p>https://visualstudio.microsoft.com/zh-hans/</p> <p>只需勾选图中"使用c++进行lunix和嵌入式开发"，其他看个人需求勾选即可<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221105/d01ab2c8db571cd0f90b64fea91eaa5d.jpg" alt="visual studio 使用cmake构建项目并远程连接虚拟机centos7"></p> </h1> <p>根据https://learn.microsoft.com/zh-cn/cpp/linux/cmake-linux-project，需要在centos上安装gcc，gdb，rsync，zip，ninja-build以及cmake（3.14+）</p> <h2><a id="21centosgccg_18" rel="nofollow"></a>2.1、centos安装gcc，g++</h2> <pre><code class="prism language-shell">yum -y<span class="token function">install</span> gcc<span class="token function">rpm</span> -qa<span class="token operator">|</span><span class="token function">grep</span><span class="token string">"g++"</span><span class="token comment"># -q查询，-a全部</span> yum whatprovides<span class="token string">"*/g++"</span>  yum -y<span class="token function">install</span> gcc-c++-4.8.5-44.el7.x86_64</code></pre> <h2><a id="22_29" rel="nofollow"></a>2.2、其余安装</h2> <pre><code>yum -y install rsync zip unzip</code></pre> <h2><a id="23cmake_35" rel="nofollow"></a>2.3、cmake安装</h2> <p>我选择https://github.com/Microsoft/CMake/releases下载了cmake-3.19.4268486-MSVC_2-Linux-x64.sh</p> <pre><code class="prism language-shell">https://github.com/Microsoft/CMake/releases 下载cmake-3.19.4268486-MSVC_2-Linux-x64.sh放置到/usr/local/cmake/cmake-3.19.4268486-MSVC_2-Linux-x64.sh<span class="token builtin class-name">cd</span> /usr/local/cmake ./cmake-3.19.4268486-MSVC_2-Linux-x64.sh<span class="token function">ln</span> -sf /usr/local/cmake/cmake-3.19.4268486-MSVC_2-Linux-x64/bin/cmake /usr/bin/cmake<span class="token comment">#ln命令</span><span class="token comment">#-s, --symbolic : make symbolic links instead of hard links</span><span class="token comment">#-f, --force : remove existing destination files</span></code></pre> <h2><a id="24ninja_54" rel="nofollow"></a>2.4、安装ninja</h2> <pre><code class="prism language-shell">https://github.com/ninja-build/ninja 下载项目ninja-master.zip 项目拷贝到/usr/local/ninja/ninja-master.zip路径 或者 直接clone项目到目标位置也行<span class="token builtin class-name">cd</span> /usr/local/ninja/<span class="token function">unzip</span> ninja-master.zip<span class="token builtin class-name">cd</span> ninja-master cmake -Bbuild-cmake cmake --build build-cmake<span class="token comment"># The ninja binary will now be inside the build-cmake directory</span><span class="token function">cp</span> /usr/local/ninja/ninja-master/build-cmake/ninja /usr/local/ninja<span class="token comment">#只需要ninja一个文件，所以直接cp</span></code></pre> </h1> <h2><a id="31CMake_71" rel="nofollow"></a>3.1、创建CMake项目</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221105/241f0693d7743c3f2c7a2b14dee647d9.jpg" alt="visual studio 使用cmake构建项目并远程连接虚拟机centos7"></p> <h2><a id="32_75" rel="nofollow"></a>3.2、配置远程服务器</h2> <p>菜单栏的工具 工具-&gt;选项-&gt;跨平台-&gt;连接管理器（“跨平台”菜单下）-&gt;添加(右边)</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221105/d3cbcc68669454dc22826545d9445d3e.jpg" alt="visual studio 使用cmake构建项目并远程连接虚拟机centos7"></p> <h2><a id="33_84" rel="nofollow"></a>3.3、选择添加的服务器</h2> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221105/3cfbb64c2505092a2517bd9398b65081.jpg" alt="visual studio 使用cmake构建项目并远程连接虚拟机centos7"></p> <p>这时visual studio会部署项目至服务器。注意下方“输出”窗口中的日志，返回值为 0即成功了。如果返回值是1，根据其中错误日志去修改配置即可。最后点击右边绿色箭头运行即可</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62174.htm">正则表达式验证合法的IP地址</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-shadowrocket-node.htm" title="12月2日|最高速度22.7M/S，2024最新Shadowrocket/SSR/Clash/V2ray免费节点高速订阅链接，翻墙机场推荐">12月2日|最高速度22.7M/S，2024最新Shadowrocket/SSR/Clash/V2ray免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-node-subscribe-links.htm" title="12月26日|最高速度22.2M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">12月26日|最高速度22.2M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-node-subscribe.htm" title="11月24日|最高速度21M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费节点高速订阅链接，翻墙机场推荐">11月24日|最高速度21M/S，2024最新SSR/Shadowrocket/Clash/V2ray免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-46975.htm" title="兽用疫苗运输与储存规范（兽用疫苗管理）">兽用疫苗运输与储存规范（兽用疫苗管理）</a></li>
+                        <li class="py-2"><a href="/news/article-46976.htm" title="开一家宠物医院大概多少钱（开一个宠物医院）">开一家宠物医院大概多少钱（开一个宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-53127.htm" title="南京宠物救助热线电话是多少（南京宠物救助热线电话是多少号码）">南京宠物救助热线电话是多少（南京宠物救助热线电话是多少号码）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-clash-v2ray-ss-ssr.htm" title="12月17日|最高速度18M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费高速订阅链接，手机翻墙机场推荐">12月17日|最高速度18M/S，2024最新Shadowrocket/Clash/V2ray/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-23388.htm" title="济南美联众合动物医院怎么样收费 济南美联众合动物医院怎么样收费的">济南美联众合动物医院怎么样收费 济南美联众合动物医院怎么样收费的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-node-share.htm" title="1月27日|最高速度19.3M/S，2025最新SSR/V2ray/Shadowrocket/Clash免费高速订阅链接，手机翻墙机场推荐">1月27日|最高速度19.3M/S，2025最新SSR/V2ray/Shadowrocket/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-20641.htm" title="Java 方法的定义与调用详解_java">Java 方法的定义与调用详解_java</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
