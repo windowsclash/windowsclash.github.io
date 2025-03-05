@@ -90,10 +90,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
-                                                        <a class="navbar-brand" href="/">
-                                Windows Clash
-                            </a>
-                                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
                                 <span class="toggler-icon"></span>
@@ -111,15 +111,12 @@
                                             <a href="/paid-subscribe/">推荐机场</a>
                                         </li>
                                                                                 <li class="nav-item">
-                                            <a href="/news/">新闻资讯</a>
+                                            <a href="/client.htm">客户端</a>
                                         </li>
                                                                                 <li class="nav-item">
-                                            <a href="#">关于</a>
+                                            <a href="/news/">新闻资讯</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="#">联系</a>
-                                        </li>
-                                    </ul>
+                                                                            </ul>
                                 </div>
                             </div>
                             <!-- navbar collapse -->
@@ -163,7 +160,6 @@
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
                   				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">1.方法概述</a></li> <li><a href="#_label1" rel="nofollow">2.方法的定义和调用</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_0" rel="nofollow">2.1 方法定义</a></li> <li><a href="#_lab2_1_1" rel="nofollow">2.2 方法调用</a></li> <li><a href="#_lab2_1_2" rel="nofollow">2.3 方法的调用过程</a></li> <li><a href="#_lab2_1_3" rel="nofollow">2.4 方法练习</a></li> </ul> <li><a href="#_label2" rel="nofollow">3.带参数方法的定义和调用</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_2_4" rel="nofollow">3.1带参数方法定义</a></li> <li><a href="#_lab2_2_5" rel="nofollow">3.2带参数方法调用</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>1.方法概述</h2> <p>什么是方法</p> <p>方法(method)是将具有独立功能的代码块组织成为一个整体，使其具有图书功能的代码集</p> <p>注意：</p> <ul> <li>方法必须先创建才可以使用，该过程称为方法定义</li> <li>方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用</li> </ul> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>2.方法的定义和调用</h2> <p class="maodian"><a name="_lab2_1_0" rel="nofollow"></a></p> <h3>2.1 方法定义</h3> <p>格式：</p> <blockquote> <p>public static void 方法名( ){<!-- --></p> <p>//方法名</p> <p>}</p> </blockquote> <p>范例：</p> <div class="ay1code"> <pre class="brush:java;">public static void isEvenNumber( ){            //方法名  }</pre> </div> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>2.2 方法调用</h3> <p>格式：</p> <blockquote> <p>方法名( );</p> </blockquote> <p>范例：</p> <blockquote> <p>isEvenNumber( );</p> </blockquote> <p>注意：</p> <p>方法必须先定义再调用否则程序将报错</p> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>2.3 方法的调用过程</h3> <div class="ay1code"> <pre class="brush:java;"> public class MethodDemo {     	public static void main(String[] args) {  		//调用方法  		isEvenNumber();  		  	}  	  		//需求定义一个方法，在方法中定义一个变量，判断数据是否是偶数  	public static void isEvenNumber() {  		//定义变量  		int number = 10;  		//判断改数据是否为偶数  		if(number%2==0){  			System.out.println("该数据为偶数");  			}else{  			System.out.println("该数据为奇数");	  		}  	  	}     }</pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>2.4 方法练习</h3> <p>需求，设计一个方法用来打印两个数中的最大数</p> <p>代码示例：</p> <div class="ay1code"> <pre class="brush:java;"> public class text072 {     	public static void main(String[] args) {  		isMaxNumber();     	}  	public static void isMaxNumber() {  		int a=9;  		int b=55;  		if (a&gt;b){  			System.out.println("max为"+a);  		}else{  			System.out.println("max为"+b);  		}  		  	}     }</pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>3.带参数方法的定义和调用</h2> <p class="maodian"><a name="_lab2_2_4" rel="nofollow"></a></p> <h3>3.1带参数方法定义</h3> <p>格式：</p> <blockquote> <p>public static void 方法名（参数）{... ...}</p> </blockquote> <p>格式（单个参数）：</p> <blockquote> <p>public static void 方法名（数据类型  变量名）{... ...}</p> </blockquote> <p>范例（单个参数）：</p> <blockquote> <p>public static void isEvenNumber（int  number）{... ...}</p> </blockquote> <p>格式（多个参数）：</p> <blockquote> <p>public static void 方法名（数据类型  变量名,数据类型 变量名2,,.....）{... ...}</p> </blockquote> <p>范例（单个参数）：</p> <blockquote> <p>public static void isEvenNumber（int  number1, int number2,......）{... ...}</p> </blockquote> <p>注意：</p> <p>1.方法定义时，参数中的数据类型和变量名一个都不能少，缺少任一程序报错</p> <p>2.方法定义时，多个参数之间使用英文逗号隔开</p> <p class="maodian"><a name="_lab2_2_5" rel="nofollow"></a></p> <h3>3.2带参数方法调用</h3> <p>格式：</p> <blockquote> <p>方法名（参数）；</p> </blockquote> <p>格式（单个参数）：</p> <blockquote> <p>方法名（变量名/常量值）;</p> </blockquote> <p>范例：</p> <blockquote> <p>isNumber（5）;</p> </blockquote> <p>格式（多个参数）;</p> <blockquote> <p>方法名（变量名1/常量值1,变量名2/常量值2）;</p> </blockquote> <p>范例：</p> <blockquote> <p>getMax（5,9）;</p> </blockquote> <p>注意：参数的数量与类型必须与方法定义中的设置相匹配，否则程序报错</p> <p>示例代码：定义一个方法，该方法接收一个参数，判断该数据是否为偶数</p> <div class="ay1code"> <pre class="brush:java;">public class text073 {     	public static void main(String[] args) {  		//常量值调用  		isEvenNumber(5);  		//变量的调用  		int number =10 ;  		isEvenNumber(number);     	}  	public static void  isEvenNumber(int number) {  		if(number%2==0){  			System.out.println("true");  		}else{  			System.out.println("false");  		}  	}  }</pre> </div> <p>后续内容明天更新，喜欢的可以点个关注，谢谢！</p> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-20183.htm">脚本如何加入html文件中,html中加载JavaScript脚本文件的常用方式总结</a></p>
                                         <p>下一个：<a href="/news/article-20643.htm">宠物粮品牌有哪些名字图片大全（宠物粮食品牌都有什么）</a></p>
                                     </div>
                                 </div>
@@ -174,16 +170,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-shadowrocket-node.htm" title="12月15日|最高速度22M/S，2024最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">12月15日|最高速度22M/S，2024最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-60989.htm" title="延吉市安泰宠物医院怎么样 延吉市安泰宠物医院怎么样啊">延吉市安泰宠物医院怎么样 延吉市安泰宠物医院怎么样啊</a></li>
+                        <li class="py-2"><a href="/news/article-22932.htm" title="思念餐厅官方网站（思念食品售后服务电话）">思念餐厅官方网站（思念食品售后服务电话）</a></li>
+                        <li class="py-2"><a href="/news/article-21098.htm" title="动物防疫站是全额编制吗（动物防疫站属于哪个单位）">动物防疫站是全额编制吗（动物防疫站属于哪个单位）</a></li>
                         <li class="py-2"><a href="/news/article-43008.htm" title="JAVA锁  ——  ReentrantLock公平锁和非公平锁原理详解">JAVA锁  ——  ReentrantLock公平锁和非公平锁原理详解</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-clash-subscribe.htm" title="1月4日|最高速度22.4M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">1月4日|最高速度22.4M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-node-subscribe.htm" title="11月28日|最高速度21M/S，2024最新Shadowrocket/SSR/Clash/V2ray免费节点高速订阅链接，翻墙机场推荐">11月28日|最高速度21M/S，2024最新Shadowrocket/SSR/Clash/V2ray免费节点高速订阅链接，翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-63976.htm" title="广州领养宠物救助站地址电话（广州领养宠物救助站地址电话是多少）">广州领养宠物救助站地址电话（广州领养宠物救助站地址电话是多少）</a></li>
                         <li class="py-2"><a href="/news/article-30386.htm" title="猫咪3针疫苗间隔多久打第三针呢怎么打（猫咪3针疫苗间隔多久打第三针呢怎么打的）">猫咪3针疫苗间隔多久打第三针呢怎么打（猫咪3针疫苗间隔多久打第三针呢怎么打的）</a></li>
-                        <li class="py-2"><a href="/news/article-28031.htm" title="动物疫苗厂家代理怎么做（动物疫苗厂家代理怎么做）">动物疫苗厂家代理怎么做（动物疫苗厂家代理怎么做）</a></li>
-                        <li class="py-2"><a href="/news/article-24536.htm" title="Git下载安装及设置详细教程">Git下载安装及设置详细教程</a></li>
-                        <li class="py-2"><a href="/news/article-25718.htm" title="河北农大动物医院 河北农大动物医院怎么样">河北农大动物医院 河北农大动物医院怎么样</a></li>
-                        <li class="py-2"><a href="/news/article-31254.htm" title="最小删除以在C ++中制作有效的括号">最小删除以在C ++中制作有效的括号</a></li>
-                        <li class="py-2"><a href="/news/article-30853.htm" title="开一家动物医院需要多久才能开（开一个动物医院需要多少钱）">开一家动物医院需要多久才能开（开一个动物医院需要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-65801.htm" title="c# Semaphore（信号量）">c# Semaphore（信号量）</a></li>
+                        <li class="py-2"><a href="/news/article-28506.htm" title="宠物猫疫苗可以自己打么（宠物猫打疫苗可以自己打吗）">宠物猫疫苗可以自己打么（宠物猫打疫苗可以自己打吗）</a></li>
+                        <li class="py-2"><a href="/news/article-22017.htm" title="我所在的城市有一家宠物医院英语翻译 我所在的城市有一家宠物医院英语翻译">我所在的城市有一家宠物医院英语翻译 我所在的城市有一家宠物医院英语翻译</a></li>
+                        <li class="py-2"><a href="/news/article-48358.htm" title="包含宠物领养平台的设计与实现研究现状论文的词条">包含宠物领养平台的设计与实现研究现状论文的词条</a></li>
                     </ul>
     </div>
 </div>
@@ -195,16 +191,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                     </ul>
     </div>
