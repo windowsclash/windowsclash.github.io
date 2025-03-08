@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-68349.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>微信小程序，制作属于自己的Icon图标</title>
+        <meta name="description" content="前言 最近在接手一个微信小程序，发现里面的图标都是使用的image组件，看起来非常别扭，加载也不太顺畅。 就想着看看微信有没有类似自带的图标库可以使用。 有是有，就是太少了，翻来翻去好像也就8 种，不" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-68349.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="微信小程序，制作属于自己的Icon图标" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/e7ad5f0f51f11d35ab45745c3860e021.webp" />
+        <meta property="og:release_date" content="2025-03-06T11:02:11" />
+    <meta property="og:updated_time" content="2025-03-06T11:02:11" />
+        <meta property="og:description" content="前言 最近在接手一个微信小程序，发现里面的图标都是使用的image组件，看起来非常别扭，加载也不太顺畅。 就想着看看微信有没有类似自带的图标库可以使用。 有是有，就是太少了，翻来翻去好像也就8 种，不" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="微信小程序，制作属于自己的Icon图标">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>微信小程序，制作属于自己的Icon图标</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h3 id="前言">前言</h3> <p>最近在接手一个微信小程序，发现里面的图标都是使用的<code>image</code>组件，看起来非常别扭，加载也不太顺畅。</p> <p>就想着看看微信有没有类似自带的图标库可以使用。</p> <p>有是有，就是太少了，翻来翻去好像也就<code>8</code> 种，不太够用啊。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/1b615f52d6a056307ad16fef30d82538.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <p>官方没有就只能自己做了，还是阿里的<code>iconfont</code>好使，首先你得有<code>iconfont</code>的账号。</p> <h4 id="1将你心仪的图标加入购物车">1、将你心仪的图标加入购物车</h4> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/08c72c18fdc231f1a4210ffb118a1040.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="2将图标添加至项目">2、将图标添加至项目</h4> <p>点击右上角倒数第三个图标进入购物车，然后将购物车添加到我们的项目中，没有项目可以自行创建。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/41031f2977d5d0e5f1c305d1d572e711.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="3我的项目">3、我的项目</h4> <p>进入到我的项目可以看到我们刚刚加入的图标，我的项目在最上方的资源管理 — 我的项目。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/180b6820bdf164e46925c91719d1c104.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="4将项目下载至本地">4、将项目下载至本地</h4> <p>解压后你会看到如下文件</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/0e2ae1bc30f2c1420478cf9a433154eb.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="5将字体转换为base64">5、将字体转换为<code>base64</code></h4> <p>进入网站：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://transfonter.org/"  target="_blank" rel="nofollow">https://transfonter.org/</a> ，找到文件中的 iconfont.ttf 字体文件，将字体文件转换为 base64。</p> <p>记得开启第<code>2</code>步的<code>Base64 encode</code>。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/028e16e49d02fd442299c2ed0d759f21.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <p>下载并解压后你将会获得如下的文件</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/ea9a13d025138346a647aeafbb4ab681.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="6样式文件修改">6、样式文件修改</h4> <p>同时打开第<code>4</code> 步下载解压的<code>iconfont.css</code>文件和第<code>5</code> 步，下载解压的<code>stylesheet.css</code>文件。</p> <h5 id="我们先看confontcss文件红圈中的代码直接删除">我们先看<code>confont.css</code>文件，红圈中的代码直接删除</h5> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/794f97fd5d40f70b1b474adfa33ba14d.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h5 id="再打开stylesheetcss文件将红圈中的代码复制到confontcss文件中去">再打开<code>stylesheet.css</code>文件，将红圈中的代码复制到<code>confont.css</code>文件中去</h5> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/fc149b159b5be6c08cafa15d1ca3184b.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="7重命名">7、重命名</h4> <p>给<code>confont.css</code>重命名为<code>xxx.wxss</code>，并放到微信小程序项目中去，<strong>注意：后缀必须是<code>wxss</code></strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bacb4e5d032b12702fa5b46cb1814726.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h4 id="8导入样式文件并使用">8、导入样式文件并使用</h4> <p>在<code>app.wxss</code>中导入我们的<code>xxx.wxss</code>，我们生成的<code>icon</code> 图标就可以在项目中使用了。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/90fbe4a50c5a4039f472652e744ee3f8.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <pre><code>&lt;view class="iconfont icon-bianji"&gt;&lt;/view&gt;</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e6f501f5c4401b0bf145a19008142fe0.jpg" alt="微信小程序，制作属于自己的Icon图标"></p> <h3 id="至此我们自定义的icon图标就制作完成了">至此，我们自定义的<code>Icon</code>图标就制作完成了</h3> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-67742.htm">安徽合肥哪有免费领养猫咪的（安徽合肥哪有免费领养猫咪的）</a></p>
+                                        <p>下一个：<a href="/news/article-68350.htm">220伏饲料颗粒机价格（220v饲料颗粒机）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-49980.htm" title="兽医资格证书考试要求什么学历（兽医资格证书考试要求什么学历的）">兽医资格证书考试要求什么学历（兽医资格证书考试要求什么学历的）</a></li>
+                        <li class="py-2"><a href="/news/article-39541.htm" title="如何使用 Redis 缓存">如何使用 Redis 缓存</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-clash-subscribe.htm" title="3月4日|最高速度20.9M/S，2025最新Shadowrocket/Clash/V2ray/SSR免费高速订阅链接，手机翻墙机场推荐">3月4日|最高速度20.9M/S，2025最新Shadowrocket/Clash/V2ray/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-46495.htm" title="动物免疫接种实验原理（动物免疫接种实验原理图）">动物免疫接种实验原理（动物免疫接种实验原理图）</a></li>
+                        <li class="py-2"><a href="/news/article-41520.htm" title="养鱼专家怎么养鱼在线咨询 养鱼专家怎么养鱼在线咨询电话">养鱼专家怎么养鱼在线咨询 养鱼专家怎么养鱼在线咨询电话</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-free-high-speed-nodes.htm" title="2月12日|最高速度20M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">2月12日|最高速度20M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-55314.htm" title="Java之LocalDate,LocalTime，LocalDateTime等时间">Java之LocalDate,LocalTime，LocalDateTime等时间</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-clash-node.htm" title="2月26日|最高速度18.1M/S，2025最新SSR/Shadowrocket/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐">2月26日|最高速度18.1M/S，2025最新SSR/Shadowrocket/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-54207.htm" title="旋转矩阵与欧拉角的相互转换">旋转矩阵与欧拉角的相互转换</a></li>
+                        <li class="py-2"><a href="/news/article-43991.htm" title="动物防疫的预防措施有哪些（动物防疫的原则是什么）">动物防疫的预防措施有哪些（动物防疫的原则是什么）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
