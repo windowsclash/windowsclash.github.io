@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-71636.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>设计模式学习笔记责任链模式实现及在Filter中的应用详解</title>
+        <meta name="description" content="责任链模式（Chain Of Responsibility Design Pattern），也叫做职责链，是将请求的发送和接收解耦，让多个接收对象都有机会处理这个请求。当有请求发生时，可将请求沿着这条" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-71636.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="设计模式学习笔记责任链模式实现及在Filter中的应用详解" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/3af819303caff84069d790ff9744d682.webp" />
+        <meta property="og:release_date" content="2025-03-11T07:47:43" />
+    <meta property="og:updated_time" content="2025-03-11T07:47:43" />
+        <meta property="og:description" content="责任链模式（Chain Of Responsibility Design Pattern），也叫做职责链，是将请求的发送和接收解耦，让多个接收对象都有机会处理这个请求。当有请求发生时，可将请求沿着这条" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="设计模式学习笔记责任链模式实现及在Filter中的应用详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>设计模式学习笔记责任链模式实现及在Filter中的应用详解</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>责任链模式（Chain Of Responsibility Design Pattern），也叫做职责链，是将请求的发送和接收解耦，让多个接收对象都有机会处理这个请求。当有请求发生时，可将请求沿着这条链传递，直到有对象处理它为止。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/64c1bca1fee625bff0bb559ffa092b0c.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> <h2 id="一责任链模式介绍">一、责任链模式介绍</h2> <p>其实在日常生活中，有不少使用责任链的场景。比如公司采购审批流程，需要各个部门领导的批准同意。在责任链模式中，客户端只需要将请求发送到责任链上，无须关心请求的处理细节和传递，请求会自动进行传递。</p> <h3 id="11-责任链模式的结构">1.1 责任链模式的结构</h3> <p>责任链模式的结构大致如下所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9743ffefd40dd22c130977abd9bfcb13.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> <ul> <li><code>abstract Handler</code>：抽象处理者，定义一个处理请求的接口，内部包含抽象处理方法和后继具体处理者</li> <li><code>Handler1、Handler2</code>：具体处理者，具体实现抽象处理者的方法，并对请求做一些逻辑处理</li> <li><code>Client</code>：客户端，使用职责链模式</li> </ul> <h3 id="12-责任链模式的实现">1.2 责任链模式的实现</h3> <p>根据上面的类图，可以实现如下代码：</p> <pre><code class="language-java">/**  * @description: 抽象处理类  * @author: wjw  * @date: 2022/4/4  */ public abstract class Handler {      private Handler successor;      public Handler getSuccessor() {         return successor;     }      public void setSuccessor(Handler successor) {         this.successor = successor;     }      /**      * 处理请求的抽象方法      * @param request 请求      */     public abstract void handleRequest(String request); } /**  * @description: 具体处理者1  * @author: wjw  * @date: 2022/4/4  */ public class Handler1 extends Handler{      private String handler;      public Handler1(String handler) {         this.handler = handler;     }      @Override     public void handleRequest(String request) {         if ("handler1".equals(request)) {             System.out.println("具体处理者handler1进行请求处理");         } else {             if (getSuccessor() != null) {                 //如果指向下一个具体处理者                 getSuccessor().handleRequest(request);             } else {                 System.out.println("没有处理者进行处理");             }         }     } } /**  * @description: 具体处理者2  * @author: wjw  * @date: 2022/4/4  */ public class Handler2 extends Handler{      private String handler;      public Handler2(String handler) {         this.handler = handler;     }      @Override     public void handleRequest(String request) {         if ("handler2".equals(request)) {             System.out.println("具体处理者handler2进行请求处理");         } else {             if (getSuccessor() != null) {                 getSuccessor().handleRequest(request);             } else {                 System.out.println("请求没有被任何处理者处理");             }         }     } } /**  * @description: 客户端类  * @author: wjw  * @date: 2022/4/4  */ public class Client {     public static void main(String[] args) {         Handler handler1 = new Handler1("handler1");         Handler handler2 = new Handler2("handler2");         handler1.setSuccessor(handler2);         handler1.handleRequest("handler1");         handler1.handleRequest("handler2");      } }</code></pre> <p>测试结果：</p> <pre><code>具体处理者handler1进行请求处理 具体处理者handler2进行请求处理</code></pre> <h2 id="二责任链模式的应用场景">二、责任链模式的应用场景</h2> <p>职责链模式最常见的应用就是用来开发各种框架的过滤器和拦截器，比如Spring Interceptor和Servlet Filter</p> <h3 id="21-在servlet-filter中的应用">2.1 在Servlet Filter中的应用</h3> <p>Filter 可以实现对HTTP 请求的过滤功能，比如鉴权、限流、记录日志、验证参数等等。比如一些Servlet 容器（TomCat、Jetty等）就支持Filter的过滤功能。以TomCat 为例：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/24e1b8c0826a1cfe5ecfcefb87fff0ee.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> <p>所以当Servlet 请求到来时，首先会经过Filter 处理，最后再到达Servlet实例。我这里选取的TomCat版本是SpringBoot自带的9.0，先来看看<code>FilterChain</code> 的接口：</p> <pre><code class="language-java">public interface FilterChain {     //Filter具体实现     void doFilter(ServletRequest var1, ServletResponse var2) throws IOException, ServletException; }</code></pre> <p><code>ApplicationFilterChain</code>是责任链模式的具体实现类：</p> <pre><code class="language-java">public final class ApplicationFilterChain implements FilterChain {     private ApplicationFilterConfig[] filters = new ApplicationFilterConfig[0]; //Filter配置数组     private int pos = 0; //执行Filter的序号     private int n = 0;	 //目前Filter的个数     private Servlet servlet = null;      public ApplicationFilterChain() {     }      	@Override     public void doFilter(ServletRequest request, ServletResponse response) throws IOException, ServletException {         //Filter 具体实现         //...     }          public static ServletRequest getLastServicedRequest() {         return (ServletRequest)lastServicedRequest.get();     }      public static ServletResponse getLastServicedResponse() {         return (ServletResponse)lastServicedResponse.get();     }      void addFilter(ApplicationFilterConfig filterConfig) {         ApplicationFilterConfig[] newFilters = this.filters;         int var3 = newFilters.length;          for(int var4 = 0; var4 &lt; var3; ++var4) {             ApplicationFilterConfig filter = newFilters[var4];             if (filter == filterConfig) {                 return;             }         } 		//增加Filter         if (this.n == this.filters.length) {             newFilters = new ApplicationFilterConfig[this.n + 10];             System.arraycopy(this.filters, 0, newFilters, 0, this.n);             this.filters = newFilters;         }          this.filters[this.n++] = filterConfig;     } }</code></pre> <h3 id="22-在spring-interceptor中的应用">2.2 在Spring Interceptor中的应用</h3> <p>和Servlet Filter类似，在Spring 中也有对应的过滤器 Interceptor。它是由Spring MVC 框架来实现，借一张来自《设计模式之美》的图片来说明：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6dcf395bb3b9c8b740db8432d654f5ba.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> <p>客户端发送请求，首先会经过Servlet Filter，然后再经过Spring Interceptor，最后再到达具体的业务中。</p> <p>和Filter一样，Interceptor 中也是基于责任链模式来实现的，与之相对的<code>HandlerInterceptor</code>是抽象处理接口：</p> <pre><code class="language-java">public interface HandlerInterceptor {     default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {         return true;     }      default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {     }      default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {     } }</code></pre> <p>会有各种具体处理类的实现：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9fcc0a0a3a77318997ca270a232d478a.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> <p>此外在其他框架中也存在着职责链模式的使用，比如Dubbo Filter、Netty ChannelPipeline等等</p> <h2 id="三责任链模式实战">三、责任链模式实战</h2> <p>模拟在618大促期间的业务系统上线审批流程场景：</p> <blockquote> <p>像是这些⼀线电商类的互联⽹公司，阿⾥、京东、拼多多等，在618期间都会做⼀些运营活动场景以及 提供的扩容备战，就像过年期间百度的红包⼀样。但是所有开发的这些系统都需要陆续的上线，因为临 近618有时候也有⼀些紧急的调整的需要上线，但为了保障线上系统的稳定性是尽可能的减少上线的， 也会相应的增强审批⼒度。就像⼀级响应、⼆级响应⼀样。</p> <p>⽽这审批的过程在随着特定时间点会增加不同级别的负责⼈加⼊，每个⼈就像责任链模式中的每⼀个核 ⼼点。对于研发并不需要关⼼具体的审批流程处理细节，只需要知道这个上线更严格，级别也更 ⾼，但对于研发⼈员来说同样是点击相同的提审按钮，等待审核。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/735b51a7ecaf833217926df4389868de.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> </blockquote> <p>使用责任链模式可以将各个服务模块按照一、二、三级进行分离，每个级别可以像<code>Filter</code>一样用<code>Successor</code>下一个级别的方法进行调用。具体结构图如下（来自《重学Java设计模式》）</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f92acb7389e4f3ab931a898dcfaa32b9.jpg" alt="设计模式学习笔记责任链模式实现及在Filter中的应用详解"></p> <p>具体代码结构</p> <pre><code>│——AuthInfo.java │——AuthLink.java │ ├─business │     AuthService.java │ └─impl       Level1AuthLink.java       Level2AuthLink.java       Level3AuthLink.java</code></pre> <p>实现代码：</p> <pre><code class="language-java">/**  * @description: 链路抽象审批  * @author: wjw  * @date: 2022/4/4  */ public abstract class AuthLink {      /**时间格式化**/     protected SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");     /**级别人员ID**/     protected String levelUserId;     /**级别人员姓名**/     protected String levelUserName;     /**下一个链路**/     private AuthLink next;      public AuthLink(String levelUserId, String levelUserName) {         this.levelUserId = levelUserId;         this.levelUserName = levelUserName;     }      public AuthLink next() {         return next;     }      public AuthLink appendNext(AuthLink next) {         this.next = next;         return this;     }      /**每个具体处理者必须实现的方法**/     public abstract AuthInfo doAuth(String uId, String orderId, Date authDate); } /**  * @description: 责任链中返回对象的定义  * @author: wjw  * @date: 2022/4/4  */ public class AuthInfo {      private String code;     private String info = " ";      public AuthInfo(String code, String... infos) { //...表示可变长参数，可以传入多个参数         this.code = code;         for (String s : infos) {             this.info = this.info.concat(s);         }     }      public String getCode() {         return code;     }      public void setCode(String code) {         this.code = code;     }      public String getInfo() {         return info;     }      public void setInfo(String info) {         this.info = info;     } } /**  * @description: 一级审核人  * @author: wjw  * @date: 2022/4/4  */ public class Level1AuthLink extends AuthLink {      public Level1AuthLink(String levelUserId, String levelUserName) {         super(levelUserId, levelUserName);     }      @Override     public AuthInfo doAuth(String uId, String orderId, Date authDate) {         Date date = AuthService.queryAuthInfo(levelUserId, orderId);         if (null == date) {             return new AuthInfo("0001", "单号", orderId, "状态：一级审批负责人", levelUserName);         }         AuthLink next = super.next();         if (null == next) {             return new AuthInfo("0000", "单号", orderId, "状态：一级审批负责人", " 时间：", f.format(date), "审批人：", levelUserName);         }         return next.doAuth(uId, orderId, authDate);     } } /**  * @description: 测试类  * @author: wjw  * @date: 2022/4/5  */ public class ApiTest {     private Logger logger = LoggerFactory.getLogger(ApiTest.class);      @Test     public void test_AuthLink() throws ParseException {         AuthLink authLink = new Level3AuthLink("1000013", "王工")                 .appendNext(new Level2AuthLink("1000012", "张经理"))                 .appendNext(new Level3AuthLink("1000011", "赵总裁"));          logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("ethan", "100099800423123", new Date())));          AuthService.auth("1000013", "100099800423123");         logger.info("测试结果：{}", "模拟二级审批，王工");         logger.info("测试结果：{}",JSON.toJSONString(authLink.doAuth("ethan", "100099800423123", new Date())));          AuthService.auth("1000012", "100099800423123");         logger.info("测试结果：{}", "模拟二级负责人审批，张经理");         logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("ethan", "100099800423123", new Date())));          AuthService.auth("1000011", "100099800423123");         logger.info("测试结果：{}", "模拟二级负责人审批，赵总裁");         logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("ethan", "100099800423123", new Date())));      } }</code></pre> <p>最后的测试结果：</p> <pre><code class="language-java">10:45:14.496 [main] INFO  ApiTest - 测试结果：{"code":"0001","info":" 单号：100099800423123 状态：待三级审批 王工"} 10:45:14.500 [main] INFO  ApiTest - 测试结果：模拟二级审批，王工 10:45:14.500 [main] INFO  ApiTest - 测试结果：{"code":"0001","info":" 单号：100099800423123 状态：待三级审批 赵总裁"} 10:45:14.500 [main] INFO  ApiTest - 测试结果：模拟二级负责人审批，张经理 10:45:14.500 [main] INFO  ApiTest - 测试结果：{"code":"0001","info":" 单号：100099800423123 状态：待三级审批 赵总裁"} 10:45:14.500 [main] INFO  ApiTest - 测试结果：模拟二级负责人审批，赵总裁 10:45:14.500 [main] INFO  ApiTest - 测试结果：{"code":"0000","info":" 单号： 100099800423123 状态：三级审批完成 时间：2022-04-05 10:45:14 审批人：赵总裁"}</code></pre> <h2 id="参考资料"></h2> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70969.htm">动物疫苗批发 动物疫苗批发商</a></p>
+                                        <p>下一个：<a href="/news/article-71637.htm">为什么给猫打疫苗打不进去了（给猫打疫苗推不进去）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45000.htm" title="win11系统怎么禁用Superfetch服务">win11系统怎么禁用Superfetch服务</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-node-share-links.htm" title="3月6日|最高速度22.6M/S，2025最新SSR/Shadowrocket/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐">3月6日|最高速度22.6M/S，2025最新SSR/Shadowrocket/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-node-daily-updates.htm" title="1月9日|最高速度18.4M/S，2025最新Shadowrocket/Clash/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐">1月9日|最高速度18.4M/S，2025最新Shadowrocket/Clash/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-41520.htm" title="养鱼专家怎么养鱼在线咨询 养鱼专家怎么养鱼在线咨询电话">养鱼专家怎么养鱼在线咨询 养鱼专家怎么养鱼在线咨询电话</a></li>
+                        <li class="py-2"><a href="/news/article-57539.htm" title="宠物粮食批发市场地址查询官网北京（宠物粮食专卖店）">宠物粮食批发市场地址查询官网北京（宠物粮食专卖店）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-free-ssr-node.htm" title="2月19日|最高速度18.8M/S，2025最新SSR/V2ray/Shadowrocket/Clash免费高速订阅链接，手机翻墙机场推荐">2月19日|最高速度18.8M/S，2025最新SSR/V2ray/Shadowrocket/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-subscribe-node.htm" title="3月11日|最高速度22M/S，2025最新Clash/SSR/Shadowrocket/V2ray免费高速订阅链接，手机翻墙机场推荐">3月11日|最高速度22M/S，2025最新Clash/SSR/Shadowrocket/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-62175.htm" title="visual studio 使用cmake构建项目并远程连接虚拟机centos7">visual studio 使用cmake构建项目并远程连接虚拟机centos7</a></li>
+                        <li class="py-2"><a href="/news/article-66454.htm" title="深入理解 Go 中的字符串_Golang">深入理解 Go 中的字符串_Golang</a></li>
+                        <li class="py-2"><a href="/news/article-42510.htm" title="vue 封装图片路径">vue 封装图片路径</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
