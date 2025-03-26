@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-80407.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Oracle with使用方法以及递归</title>
+        <meta name="description" content="数据准备 表结构 -- 部门表 CREATE TABLE DEPT (     dept_no VARCHAR2(5) NOT NULL,     dept_name VARCHAR2(255) NO" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-80407.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="Oracle with使用方法以及递归" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/dd1e8c4d066d87f9414552c2ac344839.webp" />
+        <meta property="og:release_date" content="2025-03-24T08:21:04" />
+    <meta property="og:updated_time" content="2025-03-24T08:21:04" />
+        <meta property="og:description" content="数据准备 表结构 -- 部门表 CREATE TABLE DEPT (     dept_no VARCHAR2(5) NOT NULL,     dept_name VARCHAR2(255) NO" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Oracle with使用方法以及递归">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>Oracle with使用方法以及递归</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="数据准备">数据准备</h2> <p>表结构</p> <pre><code class="language-sql">-- 部门表 CREATE TABLE DEPT (     dept_no VARCHAR2(5) NOT NULL,     dept_name VARCHAR2(255) NOT NULL,     PRIMARY KEY(dept_no) ); -- 添加注释 COMMENT ON TABLE DEPT IS '部门表'; COMMENT ON COLUMN DEPT.dept_no IS '部门编码'; COMMENT ON COLUMN DEPT.dept_name IS '部门名称'; -- 员工表 CREATE TABLE EMP ( 	emp_no VARCHAR2(8) NOT NULL,     emp_name VARCHAR2(20) NOT NULL,     dept_no VARCHAR2(5) NOT NULL,     salary NUMBER(10, 2),     PRIMARY KEY(emp_no) ); -- 添加注释 COMMENT ON TABLE EMP IS '员工表'; COMMENT ON COLUMN EMP.emp_no IS '员工编码'; COMMENT ON COLUMN EMP.emp_name IS '员工名称'; COMMENT ON COLUMN EMP.dept_no IS '所属部门编码'; COMMENT ON COLUMN EMP.salary IS '工资';</code></pre> <p>演示数据</p> <pre><code class="language-sql">-- 插入部门 insert into DEPT(dept_no, dept_name) values ('D001', '总经理部'); insert into DEPT(dept_no, dept_name) values ('D002', '人力资源部'); insert into DEPT(dept_no, dept_name) values ('D003', '行政后勤部'); insert into DEPT(dept_no, dept_name) values ('D004', '销售一部'); insert into DEPT(dept_no, dept_name) values ('D005', '销售二部'); insert into DEPT(dept_no, dept_name) values ('D006', '研发一部'); insert into DEPT(dept_no, dept_name) values ('D007', '研发二部');  -- 批量插入员工数据 declare 	type e_name is varray(7) of varchar2(20); 	e_name_arr e_name :=e_name('陈天龙','李晓红','田萌','张三','李四', '王五', '赵六'); begin 	for d in 1..7 loop 		for i in 1..(d*3) Loop 			 insert into EMP(emp_no, emp_name, dept_no, salary) values (              	'E' || d || replace(lpad(i,5),' ','0'),                  e_name_arr(d) || i || '号',                  'D' || replace(lpad(d,3),' ','0'),                  trunc(dbms_random.value(3,80)) * 1000              ); 		end loop; 	end loop; end;</code></pre> <h2 id="基本语法">基本语法</h2> <p>简单的with语句:</p> <pre><code class="language-sql">WITH t AS  (SELECT * FROM EMP) SELECT * FROM t;</code></pre> <p>在视图中使⽤WITH语句进⾏连接:</p> <pre><code class="language-sql">CREATE OR REPLACE VIEW V_EMP_DETAIL AS  WITH W_DEPT AS (     SELECT * FROM DEPT ), W_EMP AS (     SELECT * FROM EMP ) SELECT d.dept_name, e.*  FROM W_EMP e  LEFT JOIN W_DEPT d ON d.dept_no = e.dept_no;</code></pre> <p><strong>总结：</strong></p> <ul> <li> <p>使⽤WITH AS 语句可以为⼀个⼦查询语句块定义⼀个名称，在查询语句的其他地⽅引⽤这个⼦查询。</p> </li> <li> <p>Oracle 数据库像对待内联视图或临时表⼀样对待 被引⽤的⼦查询名称，从⽽起到⼀定的优化作⽤</p> </li> <li> <p>在同级select前有多个查询定义的时候，第1个⽤with，后⾯的不⽤with，并且⽤逗号隔开。</p> </li> <li> <p>最后⼀个with ⼦句与下⾯的查询之间不能有逗号，只通过右括号分割,with ⼦句的查询必须⽤括号括起来</p> </li> </ul> <p><strong>WITH语句的优点：</strong></p> <ol> <li>SQL可读性增强。⽐如对于特定with⼦查询取个有意义的名字等。</li> <li>with⼦查询只执⾏⼀次，将结果存储在⽤户临时表空间中，可以引⽤多次，增强性能。</li> </ol> <h2 id="示例">示例</h2> <p><strong>1、查询出部门的总工资⼤于所有部门平均总工资的部门。</strong></p> <p>分析：做这个查询，⾸先必须计算出所有部门的总工资，然后计算出所有部门的平均总工资，再筛选出部门的总工资⼤于所有部门总工资平均工资的部门。</p> <ol> <li>那么第1步 with 查询查出所有部门的总工资</li> <li>第2步⽤with 从第1 步获得的结果表中查询出平均工资</li> <li>最后利⽤这两次 的with 查询⽐较总工资⼤于平均工资的结果</li> </ol> <pre><code class="language-sql">WITH W_DEPT_TOTAL_SALARY AS -- 查询出部门的总⼯资 (	SELECT d.dept_name, SUM(e.salary) total_salary     FROM DEPT d  	JOIN EMP e ON e.dept_no = d.dept_no     GROUP BY d.dept_name ), W_DEPT_AVG_SALARY AS -- 查询出部门的平均⼯资，在后⼀个WITH语句中可以引⽤前⼀个定义的WITH语句 ( 	SELECT SUM(total_salary) / COUNT(1) avg_salary      FROM W_DEPT_TOTAL_SALARY ) SELECT * FROM W_DEPT_TOTAL_SALARY dts WHERE dts.total_salary &gt; ( -- 进⾏⽐较     SELECT das.avg_salary      FROM W_DEPT_AVG_SALARY das );</code></pre> <p><strong>2. 统计数据并关联到每条员工数据</strong></p> <p>展⽰根据查询结果查询出的数据，并把根据查询出的结果进⾏统计，如最⼤⼯资，最⼩⼯资，平均⼯资，<br /> 进⾏级联，由于查询的统计数据的条数为1条，所以不会发⽣笛卡⼉积的错误，</p> <pre><code class="language-sql">WITH W_EMP AS -- 查询基础数据 (     SELECT emp_no, emp_name, dept_no, salary     FROM EMP ), W_EMP_DATA AS -- 查询统计数据 (	     SELECT MAX(salary) as max_salary,      	MIN(salary) as min_salary,      	SUM(salary) as total_salary  	FROM W_EMP ) SELECT * FROM W_EMP, W_EMP_DATA -- 进⾏级联，由于查询的统计数据的条数为1条，所以不会发⽣笛卡⼉积的错误</code></pre> <p><strong>3. 后⾯的with定义可以引⽤前⾯的结果集，但是with⼦查询不可嵌套定义。</strong></p> <p>下⾯的语句错误：因为不允许嵌套定义with语句</p> <pre><code class="language-sql">WITH W_EMP_2 AS -- with中有嵌套with,不允许 ( 	WITH W_EMP AS    	( 		SELECT emp_name FROM EMP WHERE emp_no='E100001'     ) 	SELECT emp_name FROM W_EMP ) SELECT * FROM W_EMP_2;</code></pre> <h2 id="递归案例">递归案例</h2> <ol> <li> <p>实现从1到10的输出</p> <pre><code class="language-sql">with w_num(n) as ( 	select 1 as n from dual     union all     select n+1 from w_num where n&lt;10 ) select n from w_num;</code></pre> </li> <li> <p>空瓶换啤酒最多能喝几瓶问题</p> <pre><code class="language-sql">/** 	2元1瓶啤酒 	4个瓶盖换1瓶啤酒 	2个空瓶换1瓶啤酒 	问：10元可以喝几瓶 */ with w_drink_beer(beer, bottle, lid) AS ( 	select 10/2 as beer, 10/2 as bottle, 10/2 as lid     from dual     union all     select      	beer + trunc(bottle/2) + trunc(lid/4) as beer,     	mod(bottle, 2) + trunc(bottle/2) + trunc(lid/4) as bottle,     	mod(lid, 4) + trunc(bottle/2) + trunc(lid/4) as lid     from w_drink_beer     where trunc(bottle/2) != 0 or trunc(lid/4) != 0 ) select beer as '喝了几瓶啤酒', bottle as '剩下几个瓶子', lid as '剩下几个瓶盖' from w_drink_beer;</code></pre> </li> </ol> <h2 id="递归-地铁线路换乘问题">递归-地铁线路换乘问题</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1Uu411i7jf"  target="_blank" rel="nofollow">SQL案例分析：地铁换乘线路查询</a></p> <p>示例表和脚本下载：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/dongxuyang1985/sql_in_action"  target="_blank" rel="nofollow">https://github.com/dongxuyang1985/sql_in_action</a></p> <pre><code class="language-sql">-- Oracle WITH transfer (start_station, stop_station, stops, path) AS (   SELECT station_name, next_station, 1, line_name||station_name||'-&gt;'||line_name||next_station     FROM bj_subway WHERE station_name = '王府井'    UNION ALL   SELECT p.start_station, e.next_station, stops + 1, p.path||'-&gt;'||e.line_name||e.next_station     FROM transfer p     JOIN bj_subway e       ON p.stop_station = e.station_name AND (INSTR(p.path, e.next_station) = 0) ) SELECT * FROM transfer WHERE stop_station ='积水潭';</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-79740.htm">开个小型宠物食品加工厂需要什么设备（开个小型宠物食品加工厂需要什么设备呢）</a></p>
+                                        <p>下一个：<a href="/news/article-80408.htm">南京猫狗领养机构 南京猫狗领养机构有哪些</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-clash-v2ray-ss-ssr.htm" title="2月1日|最高速度20.4M/S，2025最新Shadowrocket/V2ray/SSR/Clash免费高速订阅链接，手机翻墙机场推荐">2月1日|最高速度20.4M/S，2025最新Shadowrocket/V2ray/SSR/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-clash-node.htm" title="2月26日|最高速度18.1M/S，2025最新SSR/Shadowrocket/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐">2月26日|最高速度18.1M/S，2025最新SSR/Shadowrocket/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-43991.htm" title="动物防疫的预防措施有哪些（动物防疫的原则是什么）">动物防疫的预防措施有哪些（动物防疫的原则是什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-clash-subscribe.htm" title="1月4日|最高速度22.4M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐">1月4日|最高速度22.4M/S，2025最新Shadowrocket/SSR/Clash/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-37082.htm" title="关于Postman调试@RequestBody入参模式接口的用例说明">关于Postman调试@RequestBody入参模式接口的用例说明</a></li>
+                        <li class="py-2"><a href="/news/article-68350.htm" title="220伏饲料颗粒机价格（220v饲料颗粒机）">220伏饲料颗粒机价格（220v饲料颗粒机）</a></li>
+                        <li class="py-2"><a href="/news/article-67742.htm" title="安徽合肥哪有免费领养猫咪的（安徽合肥哪有免费领养猫咪的）">安徽合肥哪有免费领养猫咪的（安徽合肥哪有免费领养猫咪的）</a></li>
+                        <li class="py-2"><a href="/news/article-80407.htm" title="Oracle with使用方法以及递归">Oracle with使用方法以及递归</a></li>
+                        <li class="py-2"><a href="/news/article-46975.htm" title="兽用疫苗运输与储存规范（兽用疫苗管理）">兽用疫苗运输与储存规范（兽用疫苗管理）</a></li>
+                        <li class="py-2"><a href="/news/article-63374.htm" title="合肥猫咪领养微博（合肥宠物猫领养）">合肥猫咪领养微博（合肥宠物猫领养）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-81788.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>超详细，Python 多线程总结的太到位了</title>
+        <meta name="description" content="在实际处理数据时，因系统内存有限，我们不可能一次把所有数据都导出进行操作，所以需要批量导出依次操作。为了加快运行，我们会采用多线程的方法进行数据处理，以下为我总结的多线程批量处理数据的模板： impo" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-81788.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="超详细，Python 多线程总结的太到位了" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/3939f081e2885b18a1a335db98da61ea.webp" />
+        <meta property="og:release_date" content="2025-03-26T08:56:30" />
+    <meta property="og:updated_time" content="2025-03-26T08:56:30" />
+        <meta property="og:description" content="在实际处理数据时，因系统内存有限，我们不可能一次把所有数据都导出进行操作，所以需要批量导出依次操作。为了加快运行，我们会采用多线程的方法进行数据处理，以下为我总结的多线程批量处理数据的模板： impo" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="超详细，Python 多线程总结的太到位了">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>超详细，Python 多线程总结的太到位了</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>在实际处理数据时，因系统内存有限，我们不可能一次把所有数据都导出进行操作，所以需要批量导出依次操作。为了加快运行，我们会采用多线程的方法进行数据处理，以下为我总结的多线程批量处理数据的模板：</p> <pre><code class="prism language-python"><span class="token keyword">import</span> threading <span class="token comment"># 从数据库提取数据的类</span> <span class="token keyword">class</span> <span class="token class-name">Scheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>         self<span class="token punctuation">.</span>_lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>RLock<span class="token punctuation">(</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>start <span class="token operator">=</span> <span class="token number">0</span>         <span class="token comment"># 每次取10000条数据</span>         self<span class="token punctuation">.</span>step <span class="token operator">=</span> <span class="token number">10000</span>      <span class="token keyword">def</span> <span class="token function">getdata</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># 上锁，以免多线程同时对数据库进行访问，取出重复数据</span>         self<span class="token punctuation">.</span>_lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token comment"># 进行取数据操作</span>         data <span class="token operator">=</span> <span class="token string">'select * from table'</span> \                <span class="token string">'where id between self.start and self.start + self.step'</span>         <span class="token comment"># 取完数据后，指针后移</span>         self<span class="token punctuation">.</span>start <span class="token operator">+=</span> self<span class="token punctuation">.</span>step         self<span class="token punctuation">.</span>_lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token keyword">return</span> data  <span class="token comment"># 处理数据的过程写在这里</span> <span class="token keyword">def</span> <span class="token function">processdata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token comment"># 从该实例中提取数据</span>     data <span class="token operator">=</span> scheduler<span class="token punctuation">.</span>getdata<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">while</span> data<span class="token punctuation">:</span>         <span class="token comment"># 进行处理数据的具体操作:</span>         <span class="token comment"># 去重、补缺、运算...只要还有数据，本线程就继续取新数据</span>         <span class="token comment"># 然后再获取数据，进行循环</span>         data <span class="token operator">=</span> scheduler<span class="token punctuation">.</span>getdata<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 创建多线程，threads_num为创建的线程数</span> <span class="token keyword">def</span> <span class="token function">threads_scheduler</span><span class="token punctuation">(</span>threads_num<span class="token punctuation">)</span><span class="token punctuation">:</span>     threads <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>threads_num<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># 创建线程</span>         td <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>processdata<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'th'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>         threads<span class="token punctuation">.</span>append<span class="token punctuation">(</span>td<span class="token punctuation">)</span>     <span class="token keyword">for</span> t <span class="token keyword">in</span> threads<span class="token punctuation">:</span>         <span class="token comment"># 启动线程</span>         t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>         <span class="token keyword">for</span> t <span class="token keyword">in</span> threads<span class="token punctuation">:</span>             <span class="token comment"># 子线程守护</span>             t<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'数据已全部处理成功'</span><span class="token punctuation">)</span>  <span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>     <span class="token comment"># 实例化一个调度器，初始化参数</span>     scheduler <span class="token operator">=</span> Scheduler<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment"># 创建线程，开始处理数据</span>     threads_scheduler<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  </code></pre> <p>主要分为三大部分：</p> <ul> <li> <p>Scheduler类，负责初始化参数，getdata方法负责提取数据</p> </li> <li> <p>processdata方法中写具体处理数据的流程</p> </li> <li> <p>threads_scheduler方法负责创建线程</p> </li> </ul> <p>Python多线程的知识我分为4部分进行讲解，以下带大家来回顾重点：</p> <h2> <a id="threading_68" rel="nofollow"></a>多线程threading</h2> <p>本章先为大家介绍了线程的相关概念:</p> <p>主线程：当一个程序启动时，就有一个进程被操作系统（OS）创建，与此同时一个线程也立刻运行，该线程通常叫做程序的主线程（Main Thread）。因为它是程序开始时就执行的，如果你需要再创建线程，那么创建的线程就是这个主线程的子线程。</p> <p>子线程：使用threading、ThreadPoolExecutor创建的线性均为子线程。</p> <p>主线程的重要性体现在两方面：1.是产生其他子线程的线程；2.通常它必须最后完成执行，比如执行各种关闭动作。</p> <p>在飞车程序中，如果没有多线程，我们就不能一边听歌一边玩飞车，听歌与玩游戏不能并行；在使用多线程后，我们就可以在玩游戏的同时听背景音乐。在这个例子中启动飞车程序就是一个进程，玩游戏和听音乐是两个线程。</p> <p>Python提供了threading模块来实现多线程:threading.Thread可以创建线程；setDaemon(True)为守护主线程，默认为False；join()为守护子线程。</p> <pre><code class="prism language-python"><span class="token keyword">from</span> time <span class="token keyword">import</span> sleep <span class="token keyword">import</span> threading  <span class="token keyword">def</span> <span class="token function">music</span><span class="token punctuation">(</span>music_name<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'正在听{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>music_name<span class="token punctuation">)</span><span class="token punctuation">)</span>         sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'music over'</span><span class="token punctuation">)</span>  <span class="token keyword">def</span> <span class="token function">game</span><span class="token punctuation">(</span>game_name<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'正在玩{}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>game_name<span class="token punctuation">)</span><span class="token punctuation">)</span>         sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'game over'</span><span class="token punctuation">)</span>  threads <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> t1 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>music<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'稻香'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> threads<span class="token punctuation">.</span>append<span class="token punctuation">(</span>t1<span class="token punctuation">)</span> t2 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>game<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'飞车'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> threads<span class="token punctuation">.</span>append<span class="token punctuation">(</span>t2<span class="token punctuation">)</span>  <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     <span class="token keyword">for</span> t <span class="token keyword">in</span> threads<span class="token punctuation">:</span>         <span class="token comment"># t.setDaemon(True)</span>         t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>              <span class="token keyword">for</span> t <span class="token keyword">in</span> threads<span class="token punctuation">:</span>         t<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'主线程运行结束'</span><span class="token punctuation">)</span> </code></pre> <h2> <a id="_117" rel="nofollow"></a>线程池</h2> <p>因为新建线程系统需要分配资源、终止线程系统需要回收资源，所以如果可以重用线程，则可以减去新建/终止的开销以提升性能。同时，使用线程池的语法比自己新建线程执行线程更加简洁。</p> <p>Python为我们提供了ThreadPoolExecutor来实现线程池，此线程池默认子线程守护。它的适应场景为突发性大量请求或需要大量线程完成任务，但实际任务处理时间较短。</p> <pre><code class="prism language-python"><span class="token keyword">from</span> time <span class="token keyword">import</span> sleep <span class="token comment"># fun为定义的待运行函数</span> <span class="token keyword">with</span> ThreadPoolExecutor<span class="token punctuation">(</span>max_workers<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">as</span> executor<span class="token punctuation">:</span>     ans <span class="token operator">=</span> executor<span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>fun<span class="token punctuation">,</span> <span class="token punctuation">[</span>遍历值<span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token keyword">for</span> res <span class="token keyword">in</span> ans<span class="token punctuation">:</span>         <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>  <span class="token keyword">with</span> ThreadPoolExecutor<span class="token punctuation">(</span>max_workers<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">as</span> executor<span class="token punctuation">:</span>     <span class="token builtin">list</span> <span class="token operator">=</span> <span class="token punctuation">[</span>遍历值<span class="token punctuation">]</span>     ans <span class="token operator">=</span> <span class="token punctuation">[</span>executor<span class="token punctuation">.</span>submit<span class="token punctuation">(</span>fun<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">list</span><span class="token punctuation">]</span>     <span class="token keyword">for</span> res <span class="token keyword">in</span> as_completed<span class="token punctuation">(</span>ans<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> <p>其中max_workers为线程池中的线程个数，常用的遍历方法有map和submit+as_completed。根据业务场景的不同，若我们需要输出结果按遍历顺序返回，我们就用map方法，若想谁先完成就返回谁，我们就用submit+as_complete方法。</p> <h2> <a id="_143" rel="nofollow"></a>线程互斥</h2> <p>我们把一个时间段内只允许一个线程使用的资源称为临界资源，对临界资源的访问，必须互斥的进行。互斥，也称间接制约关系。线程互斥指当一个线程访问某临界资源时，另一个想要访问该临界资源的线程必须等待。当前访问临界资源的线程访问结束，释放该资源之后，另一个线程才能去访问临界资源。锁的功能就是实现线程互斥。</p> <p>我把线程互斥比作厕所包间上大号的过程，因为包间里只有一个坑，所以只允许一个人进行大号。当第一个人要上厕所时，会将门上上锁，这时如果第二个人也想大号，那就必须等第一个人上完，将锁解开后才能进行，在这期间第二个人就只能在门外等着。这个过程与代码中使用锁的原理如出一辙，这里的坑就是临界资源。</p> <p>Python 的 threading 模块引入了锁。threading 模块提供了 Lock 类，它有如下方法加锁和释放锁：</p> <ul> <li> <p>acquire()：对 Lock加锁，其中timeout参数指定加锁多少秒</p> </li> <li> <p>release()：释放锁</p> </li> </ul> <pre><code class="prism language-python"><span class="token keyword">class</span> <span class="token class-name">Account</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> card_id<span class="token punctuation">,</span> balance<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># 封装账户ID、账户余额的两个变量</span>         self<span class="token punctuation">.</span>card_id<span class="token operator">=</span> card_id         self<span class="token punctuation">.</span>balance <span class="token operator">=</span> balance          <span class="token keyword">def</span> <span class="token function">withdraw</span><span class="token punctuation">(</span>account<span class="token punctuation">,</span> money<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token comment"># 进行加锁</span>     lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment"># 账户余额大于取钱数目</span>     <span class="token keyword">if</span> account<span class="token punctuation">.</span>balance <span class="token operator">&gt;=</span> money<span class="token punctuation">:</span>         <span class="token comment"># 吐出钞票</span>         <span class="token keyword">print</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>current_thread<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"取钱成功！吐出钞票:"</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">' '</span><span class="token punctuation">)</span>         <span class="token comment"># 修改余额</span>         account<span class="token punctuation">.</span>balance <span class="token operator">-=</span> money         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t余额为: "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>account<span class="token punctuation">.</span>balance<span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token keyword">else</span><span class="token punctuation">:</span>         <span class="token keyword">print</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>current_thread<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"取钱失败！余额不足"</span><span class="token punctuation">)</span>     <span class="token comment"># 进行解锁</span>     lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 创建一个账户，银行卡id为8888，存款1000元</span> acct <span class="token operator">=</span> Account<span class="token punctuation">(</span><span class="token string">"8888"</span> <span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>  <span class="token comment"># 模拟两个对同一个账户取钱</span> <span class="token comment"># 在主线程中创建一把锁</span> lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'窗口A'</span><span class="token punctuation">,</span> target<span class="token operator">=</span>withdraw <span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>acct <span class="token punctuation">,</span> <span class="token number">800</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'窗口B'</span><span class="token punctuation">,</span> target<span class="token operator">=</span>withdraw <span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>acct <span class="token punctuation">,</span> <span class="token number">800</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <h2> <a id="lockRlock_189" rel="nofollow"></a>lock与Rlock的区别</h2> <p>区别一：Lock被称为原始锁，一个线程只能请求一次；RLock被称为重入锁，可以被一个线程请求多次，即锁中可以嵌套锁。</p> <pre><code class="prism language-python"><span class="token keyword">import</span> threading  <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第一道锁'</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第二道锁'</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>      <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>     main<span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <p>我们会发现这个程序只会打印“第一道锁”，而且程序既没有终止，也没有继续运行。这是因为Lock锁在同一线程内第一次加锁之后还没有释放时，就进行了第二次acquire请求，导致无法执行release，所以锁永远无法释放，这就是死锁。如果我们使用RLock就能正常运行，不会发生死锁的状态。</p> <p>区别二：当Lock处于锁定状态时，不属于特定线程，可在另一个线程中进行解锁释放；而RLock只有当前线程才能释放本线程上的锁，不可由其他线程进行释放，所以在使用RLock时，acquire与release必须成对出现，即解铃还须系铃人。</p> <pre><code class="prism language-python"><span class="token keyword">import</span> threading  <span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"在子线程解锁后打印"</span><span class="token punctuation">)</span> <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>     t <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>main<span class="token punctuation">)</span>     t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <p>在主线程中定义Lock锁，然后上锁，再创建一个子线程t运行main函数释放锁，结果正常输出，说明主线程上的锁，可由子线程解锁。</p> <p>如果把上面的锁改为RLock则报错。在实际中设计程序时，我们会将每个功能分别封装成一个函数，每个函数中都可能会有临界区域，所以就需要用到RLock。</p> <pre><code class="prism language-python"><span class="token keyword">import</span> threading <span class="token keyword">import</span> time  <span class="token keyword">def</span> <span class="token function">fun_1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'开始'</span><span class="token punctuation">)</span>     time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"第一道锁"</span><span class="token punctuation">)</span>     fun_2<span class="token punctuation">(</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>      <span class="token keyword">def</span> <span class="token function">fun_2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     lock<span class="token punctuation">.</span>acquire<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"第二道锁"</span><span class="token punctuation">)</span>     lock<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>      <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     lock <span class="token operator">=</span> threading<span class="token punctuation">.</span>RLock<span class="token punctuation">(</span><span class="token punctuation">)</span>     t1 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>fun_1<span class="token punctuation">)</span>     t2 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>fun_1<span class="token punctuation">)</span>     t1<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>     t2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span> </code></pre> <p>一句话总结就是Lock不能套娃，RLock可以套娃；Lock可以由其他线程中的锁进行操作，RLock只能由本线程进行操作。</p> <p>以上就是多线程所有内容，<strong>喜欢的小伙伴点赞支持，收藏。</strong></p> <ul> </ul> <p></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-81136.htm">PostCSS分享</a></p>
+                                        <p>下一个：<a href="/news/article-81789.htm">动物注射疫苗,最佳的用药方法是静脉注射吗对吗（给动物注射疫苗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-46975.htm" title="兽用疫苗运输与储存规范（兽用疫苗管理）">兽用疫苗运输与储存规范（兽用疫苗管理）</a></li>
+                        <li class="py-2"><a href="/news/article-62774.htm" title="SpringBoot配置多个数据库源">SpringBoot配置多个数据库源</a></li>
+                        <li class="py-2"><a href="/news/article-68350.htm" title="220伏饲料颗粒机价格（220v饲料颗粒机）">220伏饲料颗粒机价格（220v饲料颗粒机）</a></li>
+                        <li class="py-2"><a href="/news/article-43503.htm" title="python数据分析与挖掘实战————银行分控模型（几种算法模型的比较）">python数据分析与挖掘实战————银行分控模型（几种算法模型的比较）</a></li>
+                        <li class="py-2"><a href="/news/article-37579.htm" title="Java中的多态">Java中的多态</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-high-speed-nodes.htm" title="2月5日|最高速度19.8M/S，2025最新Shadowrocket/SSR/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐">2月5日|最高速度19.8M/S，2025最新Shadowrocket/SSR/V2ray/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-37082.htm" title="关于Postman调试@RequestBody入参模式接口的用例说明">关于Postman调试@RequestBody入参模式接口的用例说明</a></li>
+                        <li class="py-2"><a href="/news/article-70315.htm" title="小型犬狗粮排名前十品牌图（小型犬狗粮哪个牌子最好）">小型犬狗粮排名前十品牌图（小型犬狗粮哪个牌子最好）</a></li>
+                        <li class="py-2"><a href="/news/article-78367.htm" title="一步一步生成滑动验证码图片详解">一步一步生成滑动验证码图片详解</a></li>
+                        <li class="py-2"><a href="/news/article-55850.htm" title="Spring Security教程（13）&#8212;- 验证码功能的实现">Spring Security教程（13）&#8212;- 验证码功能的实现</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
