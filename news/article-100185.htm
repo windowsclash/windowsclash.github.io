@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-100185.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>LevelDB 学习笔记5：版本控制_在线工具</title>
+        <meta name="description" content="由于压缩是在后台线程异步进行的，所以会出现新老 sstable 同时存在的状态 但合并完成后，老的 sstable 并不能直接删除，必须等到没有人引用它们，才可以删除 因此数据库可能同时存在多个 Ve" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-100185.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="LevelDB 学习笔记5：版本控制_在线工具" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/e7ad5f0f51f11d35ab45745c3860e021.webp" />
+        <meta property="og:release_date" content="2025-04-20T09:03:49" />
+    <meta property="og:updated_time" content="2025-04-20T09:03:49" />
+        <meta property="og:description" content="由于压缩是在后台线程异步进行的，所以会出现新老 sstable 同时存在的状态 但合并完成后，老的 sstable 并不能直接删除，必须等到没有人引用它们，才可以删除 因此数据库可能同时存在多个 Ve" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="LevelDB 学习笔记5：版本控制_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>LevelDB 学习笔记5：版本控制_在线工具</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				</h1> <ul> <li>由于压缩是在后台线程异步进行的，所以会出现新老 sstable 同时存在的状态</li> <li>但合并完成后，老的 sstable 并不能直接删除，必须等到没有人引用它们，才可以删除</li> <li>因此数据库可能同时存在多个 Version，它们的集合是 VersionSet <ul> <li>所有的 version 组织在一个双向链表里，最新的 version 称为 current</li> </ul> </li> </ul> <h2 id="版本变更">版本变更</h2> <ul> <li>VersionEdit 是新 Version 相较于旧 Version 变动的内容 <ul> <li>VersionOld + VersionEdit = VersionNew</li> <li>VersionEdit 对应 MANIFEST 文件里的一条记录 <ul> <li> <code>EncodeTo()</code> 和 <code>DecodeFrom()</code> 方法分别用于将 VersionEdit 序列化为 manifest 记录和从 MANIFEST 记录中反序列化出 VersionEdit</li> </ul> </li> </ul> </li> <li>MANIFEST 文件本质上也是日志文件，格式和 redo log 是相同的 <ul> <li>第一条记录是全量的 LevelDB 版本信息</li> <li>后续每一条记录都是 LevelDB 版本变更信息</li> <li>重启后能通过 MANIFEST 文件恢复版本信息</li> </ul> </li> <li>调用 <code>LogAndApply()</code> 把 VersionEdit 应用到当前版本上，并新增一条记录 <ul> <li>以下几种情况下会被调用 <ul> <li>打开 DB 的时候，从 MANIFEST 文件中恢复出版本信息后，会在新的 MANIFEST 文件中提交一条全量的版本信息</li> <li>minor compaction 完成后，提交新增的 sstable</li> <li>major compaction 完成后，提交 sstable 变动</li> </ul> </li> </ul> </li> <li> <code>VersionSet::Builder</code></p> <ul> <li>帮助执行版本变更的工具类</li> <li>以某个版本为基础，不断 Apply 版本变更，得到最终的版本</li> <li> <code>LogAndApply()</code> 和从 manifest 文件中恢复版本信息的时候都会用到它<br /><img decoding="async" src="https://img2022.cnblogs.com/blog/1099671/202204/1099671-20220418233012211-1847290373.png" alt="LevelDB 学习笔记5：版本控制_在线工具"> </li> </ul> </li> </ul> <h2 id="从重启中恢复">从重启中恢复</h2> <p>从重启中恢复需要做两件事</p> <ul> <li>恢复版本信息</li> <li>重做 WAL 中记录的操作恢复 memtable 中的内容</li> </ul> <h3 id="恢复版本信息">恢复版本信息</h3> <ul> <li>主要逻辑在 <code>VersionSet::Recover()</code> 中</li> <li>读取 current 文件的内容找到 MANIFEST 文件名</li> <li>遍历 manifest 文件，将所有记录 Apply 到 Version Builder 上</li> <li>从 Builder 中获得最终的 Version，将它加入 VersionSet，并作为当前版本使用</li> <li>检查现存的 MANIFEST 文件能否重用 <ul> <li>如果旧的 MANIFEST 文件大小不是太大就可以重用它</li> <li>因为重启是唯一一处 MANIFEST 文件大小缩小的地方，我们不想让 MANIFEST 文件大小无限增长</li> </ul> </li> <li>如果不能重用，就会提交一条 MANIFEST 记录到新的 MANIFEST 文件里，包含了当前版本的全量信息</li> </ul> <h3 id="恢复-memtable-中的内容">恢复 memtable 中的内容</h3> <ul> <li>主要逻辑在 <code>DBImpl::Recover()</code> 的后半部分</li> <li>收集需要 redo 的日志文件 <ul> <li>做 minor compaction 后，修改记录会被写到 MANIFEST 文件中，其中包括日志文件的文件号</li> <li>因此 MANIFEST 中最新记录的日志文件号就是最后被写入磁盘的 memtable 的日志文件号，文件号大于它的日志文件都视为需要 redo 的</li> </ul> </li> <li>redo <ul> <li>根据文件号顺序，遍历所有需要 redo 的日志文件</li> <li>将日志记录转换为 WriteBatch</li> <li>redo 过程中，如果发现 memtable 大小超过阈值，直接对它做 minor compaction</li> </ul> </li> </ul> <h2 id="repairer">Repairer</h2> <p>如果 MANIFEST 文件丢失，那么能否恢复出版本信息呢？</p> <p>答案是可以的，LevelDB 提供了 <code>Repairer</code> 类用来从日志文件和 sstable 文件中恢复出版本信息</p> <ul> <li>所有日志文件都会被转换为 sstable 文件</li> <li>扫描所有 sstable 文件并计算 <ul> <li>最大最小 key</li> <li>最大序列号</li> </ul> </li> <li>用这些信息恢复上次运行的版本信息</li> </ul> <p>恢复过程遍历了整个 DB 的全部文件，所以是相当耗时的过程</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100184.htm">Java中的抽象类与接口</a></p>
+                                        <p>下一个：<a href="/news/article-100826.htm">JavaScript如何对二进制值数组进行排序</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72307.htm" title="小型狗粮加工设备厂家排名 小型狗粮加工设备厂家排名前十">小型狗粮加工设备厂家排名 小型狗粮加工设备厂家排名前十</a></li>
+                        <li class="py-2"><a href="/news/article-83231.htm" title="瑞鹏宠物医院有限公司（瑞鹏宠物医院成立时间）">瑞鹏宠物医院有限公司（瑞鹏宠物医院成立时间）</a></li>
+                        <li class="py-2"><a href="/news/article-99324.htm" title="动物医院好评100字通用评论内容（动物医院好评模板）">动物医院好评100字通用评论内容（动物医院好评模板）</a></li>
+                        <li class="py-2"><a href="/news/article-91126.htm" title="宠物粮食龙头股票排名 宠物粮食龙头股票排名前十">宠物粮食龙头股票排名 宠物粮食龙头股票排名前十</a></li>
+                        <li class="py-2"><a href="/news/article-100826.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                        <li class="py-2"><a href="/news/article-67085.htm" title="狗粮颗粒饲料配方大全表（狗粮颗粒怎么做的）">狗粮颗粒饲料配方大全表（狗粮颗粒怎么做的）</a></li>
+                        <li class="py-2"><a href="/news/article-97903.htm" title="饮料批发一手货源市场（饮料批发一手货源市场合肥）">饮料批发一手货源市场（饮料批发一手货源市场合肥）</a></li>
+                        <li class="py-2"><a href="/news/article-94901.htm" title="宠物狗粮生产机器设备厂家（宠物狗粮生产机器设备厂家有哪些）">宠物狗粮生产机器设备厂家（宠物狗粮生产机器设备厂家有哪些）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-19-node-share.htm" title="4月19日|最高速度18.8M/S，2025最新Clash/V2ray/Shadowrocket/SSR免费高速订阅链接，手机翻墙机场推荐">4月19日|最高速度18.8M/S，2025最新Clash/V2ray/Shadowrocket/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-22-free-high-speed-nodes.htm" title="4月22日|最高速度20.2M/S，2025最新Shadowrocket/Clash/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐">4月22日|最高速度20.2M/S，2025最新Shadowrocket/Clash/SSR/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">65</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
