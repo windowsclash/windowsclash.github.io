@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://windowsclash.github.io/news/article-106927.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>AndroidQ(10)黑暗模式适配</title>
+        <meta name="description" content="前言：作为一个Android程序员，每年最期待就是Google的发布会啦！！这不，今年的AndroidQ如期而至。这里简单介绍一下Android的新特性：  AndroidQ全局暗黑模式 隐私权限的更" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="WindowsClash节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://windowsclash.github.io/news/article-106927.htm" />
+    <meta property="og:site_name" content="WindowsClash节点订阅站" />
+    <meta property="og:title" content="AndroidQ(10)黑暗模式适配" />
+    <meta property="og:image" content="https://windowsclash.github.io/uploads/20240524/dd1e8c4d066d87f9414552c2ac344839.webp" />
+        <meta property="og:release_date" content="2025-04-29T08:01:48" />
+    <meta property="og:updated_time" content="2025-04-29T08:01:48" />
+        <meta property="og:description" content="前言：作为一个Android程序员，每年最期待就是Google的发布会啦！！这不，今年的AndroidQ如期而至。这里简单介绍一下Android的新特性：  AndroidQ全局暗黑模式 隐私权限的更" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="AndroidQ(10)黑暗模式适配">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSNVGWZ5YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSNVGWZ5YL');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>Windows Clash</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/free-nodes/">免费节点</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>AndroidQ(10)黑暗模式适配</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>前言</strong>：作为一个Android程序员，每年最期待就是Google的发布会啦！！这不，今年的AndroidQ如期而至。这里简单介绍一下Android的新特性：</p> <ul> <li>AndroidQ全局暗黑模式</li> <li>隐私权限的更新</li> <li>AndroidQ新版的手势导航（其实就是仿IOS）</li> <li>系统日程UI的优化（还有其他系统UI上的优化）</li> <li>Google组件（jetpack）的推荐</li> </ul> <p>每年的Google大会一结束就是程序员忙碌工作的开端，各种适配，各种新功能… 一堆事情下来，搞的焦头烂额。 但是今年的发布会之后，仔细一看Q的更新清单，其实需要我们去适配优化的并不多，主要就是隐私权限和黑暗模式需要我们紧急适配。而且黑暗模式和以往的多主题适配是一个道理，这样我们的跟进优化工作就更加简单了。废话不多说，这里我们就来介绍一下在原生系统下进行黑暗模式的适配。</p> <p><strong>AndroidQ黑暗模式适配</strong>：</p> <ul> <li>适配原理介绍：黑暗模式和正常模式，无非就是两种主题间的切换（主要是各种背景色，字体颜色和Icon）。因此我们只需要定义两套不同的主题，根据是否是黑暗模式进行主题的切换即可。</li> </ul> <p><strong>详细步骤</strong>：</p> <ul> <li>判断当前是否处于黑暗模式：用于启动时还在不同的主题</li> </ul> <pre><code>	//检查当前系统是否已开启暗黑模式     public static boolean getDarkModeStatus(Context context) {         int mode = context.getResources().getConfiguration().uiMode &amp; Configuration.UI_MODE_NIGHT_MASK;         return mode == Configuration.UI_MODE_NIGHT_YES;     } </code></pre> <ul> <li>定义两套主题（正常模式和黑暗模式）：即在style文件下自定义两个style，但是必须指定parent为‘Theme.AppCompat.DayNight.DarkActionBar’，如下所示：</li> </ul> <pre><code>//正常模式下的主题  &lt;style name="main_theme_light" parent="Theme.AppCompat.DayNight.DarkActionBar"&gt;         &lt;item name="windowActionBar"&gt;false&lt;/item&gt;         &lt;item name="windowNoTitle"&gt;true&lt;/item&gt;         &lt;item name="main_text_color"&gt;@color/main_text_color_light&lt;/item&gt;         &lt;item name="main_bg_color"&gt;@color/main_bg_color_light&lt;/item&gt;     &lt;/style&gt;  //黑暗模式下的主题  &lt;style name="main_theme_dark" parent="Theme.AppCompat.DayNight.DarkActionBar"&gt;         &lt;item name="windowActionBar"&gt;false&lt;/item&gt;         &lt;item name="windowNoTitle"&gt;true&lt;/item&gt;         &lt;item name="main_text_color"&gt;@color/main_text_color_dark&lt;/item&gt;         &lt;item name="main_bg_color"&gt;@color/main_bg_color_dark&lt;/item&gt;     &lt;/style&gt; </code></pre> <ul> <li>找出适配黑暗模式需要的属性（主要是颜色属性：背景色、字体颜色和Icon颜色等并给属性赋值），类似如下定义：</li> </ul> <pre><code>供在上一步的style中引用，不同模式下提供不同的值   &lt;!--    主要字体颜色--&gt;     &lt;attr name="main_text_color" format="color" /&gt;  &lt;!--    主要背景颜色--&gt;         &lt;attr name="main_bg_color" format="color" /&gt;   	//不同模式下的颜色属性值 	&lt;color name="main_text_color_light"&gt;#000000&lt;/color&gt;     &lt;color name="main_text_color_dark"&gt;#ffffff&lt;/color&gt;     &lt;color name="main_bg_color_light"&gt;#ffffff&lt;/color&gt;     &lt;color name="main_bg_color_dark"&gt;#000000&lt;/color&gt; </code></pre> <ul> <li>在activity和xml中引用我们自定义的属性：</li> </ul> <pre><code>//在xml文件中使用我们自定义属性 &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"     xmlns:app="http://schemas.android.com/apk/res-auto"     xmlns:tools="http://schemas.android.com/tools"     android:layout_width="match_parent"     android:layout_height="match_parent"     android:background="?attr/main_bg_color"&gt;      &lt;TextView         android:layout_width="wrap_content"         android:layout_height="wrap_content"         android:text="Hello World!"         android:textColor="?attr/main_text_color"         app:layout_constraintBottom_toBottomOf="parent"         app:layout_constraintLeft_toLeftOf="parent"         app:layout_constraintRight_toRightOf="parent"         app:layout_constraintTop_toTopOf="parent" /&gt;  &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;  //在BaseActivity中切换不同的主题，才能使我们自定义的属性生效，必须在setContentView()方法前设置：  @Override     protected void onCreate(@Nullable Bundle savedInstanceState) {         if (getDarkModeStatus(this)) {             setTheme(R.style.main_theme_dark);         }else {             setTheme(R.style.main_theme_light);         }         setContentView(R.layout.activity_main)      }  //为达到更好的适配效果，可在xml文件的activity节点下加入如下属性： android:configChanges="uiMode" </code></pre> <p>ps:Icon的适配可以借助tint属性切换不同模式的颜色。</p> <p><strong>总结</strong>：到此为止，我们在两个模式下的切换就算完成了，你可以尝试开启系统的黑暗模式，可见我们的几面也会换成黑暗模式下的主题。如果有更多不同主题，那我们的工作就简单了，只需要在style文件下增加主题，并且加入主题下的颜色值就可以了。</p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-106269.htm">天津宠物猫领养 天津宠物猫领养中心</a></p>
+                                        <p>下一个：<a href="/news/article-106928.htm">nginx进程管理</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-82528.htm" title="动物医院手抄报（动物医院手抄报图片大全）">动物医院手抄报（动物医院手抄报图片大全）</a></li>
+                        <li class="py-2"><a href="/news/article-90430.htm" title="北京观赏动物医院鹦鹉 北京能看鹦鹉的动物医院">北京观赏动物医院鹦鹉 北京能看鹦鹉的动物医院</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-subscribe-node.htm" title="3月2日|最高速度22.8M/S，2025最新SSR/Clash/Shadowrocket/V2ray免费高速订阅链接，手机翻墙机场推荐">3月2日|最高速度22.8M/S，2025最新SSR/Clash/Shadowrocket/V2ray免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-96434.htm" title="弓形虫从哪里进入身体（弓形虫从哪里来）">弓形虫从哪里进入身体（弓形虫从哪里来）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-shadowrocket-node.htm" title="4月5日|最高速度22.7M/S，2025最新Shadowrocket/V2ray/SSR/Clash免费高速订阅链接，手机翻墙机场推荐">4月5日|最高速度22.7M/S，2025最新Shadowrocket/V2ray/SSR/Clash免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-68349.htm" title="微信小程序，制作属于自己的Icon图标">微信小程序，制作属于自己的Icon图标</a></li>
+                        <li class="py-2"><a href="/news/article-76992.htm" title="动物疫苗代理公司如何开（动物疫苗经营）">动物疫苗代理公司如何开（动物疫苗经营）</a></li>
+                        <li class="py-2"><a href="/news/article-83932.htm" title="狗粮品牌大全图片及价格表（狗粮品牌有哪些品牌）">狗粮品牌大全图片及价格表（狗粮品牌有哪些品牌）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-free-shadowrocket-node.htm" title="3月20日|最高速度19.7M/S，2025最新Shadowrocket/V2ray/Clash/SSR免费高速订阅链接，手机翻墙机场推荐">3月20日|最高速度19.7M/S，2025最新Shadowrocket/V2ray/Clash/SSR免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-106927.htm" title="AndroidQ(10)黑暗模式适配">AndroidQ(10)黑暗模式适配</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>WindowsClash节点订阅站 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
