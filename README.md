@@ -1,4 +1,4 @@
-# 7月8日|最高速度20M/S，2025最新V2ray/SSR/Clash/Shadowrocket免费高速订阅链接，手机翻墙机场推荐  更新时间 2025-07-08 08:22:20
+# 7月14日|最高速度19.5M/S，2025最新SSR/V2ray/Clash/Shadowrocket免费高速订阅链接，手机翻墙机场推荐  更新时间 2025-07-14 09:50:55
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://windowsclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://windowsclash.github.io/uploads/2025/07/0-20250708.yaml
-- https://windowsclash.github.io/uploads/2025/07/1-20250708.yaml
-- https://windowsclash.github.io/uploads/2025/07/2-20250708.yaml
-- https://windowsclash.github.io/uploads/2025/07/3-20250708.yaml
-- https://windowsclash.github.io/uploads/2025/07/4-20250708.yaml
+- https://windowsclash.github.io/uploads/2025/07/0-20250714.yaml
+- https://windowsclash.github.io/uploads/2025/07/1-20250714.yaml
+- https://windowsclash.github.io/uploads/2025/07/2-20250714.yaml
+- https://windowsclash.github.io/uploads/2025/07/3-20250714.yaml
+- https://windowsclash.github.io/uploads/2025/07/4-20250714.yaml
 
 ### V2ray订阅链接
 
-- https://windowsclash.github.io/uploads/2025/07/0-20250708.txt
-- https://windowsclash.github.io/uploads/2025/07/1-20250708.txt
-- https://windowsclash.github.io/uploads/2025/07/2-20250708.txt
-- https://windowsclash.github.io/uploads/2025/07/3-20250708.txt
-- https://windowsclash.github.io/uploads/2025/07/4-20250708.txt
+- https://windowsclash.github.io/uploads/2025/07/0-20250714.txt
+- https://windowsclash.github.io/uploads/2025/07/1-20250714.txt
+- https://windowsclash.github.io/uploads/2025/07/2-20250714.txt
+- https://windowsclash.github.io/uploads/2025/07/3-20250714.txt
+- https://windowsclash.github.io/uploads/2025/07/4-20250714.txt
 
 ### Sing-box订阅链接
 
-- https://windowsclash.github.io/uploads/2025/07/20250708.json
+- https://windowsclash.github.io/uploads/2025/07/20250714.json
 
 ## 更多clash节点订阅 ：
 
