@@ -416,24 +416,9 @@ A5：</p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
+    <div class="panel-heading"><h5>QuantumultX 分流规则如何优化游戏体验？</h5></div>
     <div class="panel-body">
-        Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 支持哪几种代理协议？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 支持多种协议，包括 Shadowsocks、Vmess、VLess、Trojan、HTTP、SOCKS5 等。它还可解析部分 QuantumultX 与 Clash 的订阅格式，适合 iOS 用户进行全协议代理管理与切换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的流量分流规则支持哪些条件？</h5></div>
-    <div class="panel-body">
-        V2Ray 支持按域名、IP、端口、协议或用户标签进行分流。用户可灵活设置国内直连、国外代理或特定节点，实现精准控制和网络优化。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 显示配置已加载但无法访问外网，可能原因？</h5></div>
-    <div class="panel-body">
-        检查是否启用了系统代理或 TUN 模式，确认浏览器是否使用系统代理设置；查看防火墙或杀软是否拦截 WinXray；确认节点是否被机场下架或订阅失效，必要时重新导入订阅并测速。<hr />    </div>
+        QuantumultX 可按端口、协议或应用设置分流规则，将游戏流量走低延迟节点。结合策略组自动切换，可保证游戏连接稳定，减少掉线和延迟，提高流畅度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 服务器启动后提示端口被占用，该如何处理？</h5></div>
@@ -441,19 +426,9 @@ A5：</p>
         先用 netstat 或 ss 工具查看占用该端口的进程（例如 `ss -ltnp`），确认是旧进程或其他服务占用。停止占用进程或修改 V2Ray 配置端口，然后重启服务并检查防火墙规则是否开放了新端口。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 Routing 设置可以实现什么？</h5></div>
+    <div class="panel-heading"><h5>WinXray 显示配置已加载但无法访问外网，可能原因？</h5></div>
     <div class="panel-body">
-        V2Ray 的 Routing 系统支持基于域名、IP、端口或协议的智能分流。用户可以指定特定网站直连、部分服务走代理，还能创建黑白名单，实现灵活的网络访问控制。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
-    <div class="panel-body">
-        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。可为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 分流规则如何优化游戏体验？</h5></div>
-    <div class="panel-body">
-        QuantumultX 可按端口、协议或应用设置分流规则，将游戏流量走低延迟节点。结合策略组自动切换，可保证游戏连接稳定，减少掉线和延迟，提高流畅度。<hr />    </div>
+        检查是否启用了系统代理或 TUN 模式，确认浏览器是否使用系统代理设置；查看防火墙或杀软是否拦截 WinXray；确认节点是否被机场下架或订阅失效，必要时重新导入订阅并测速。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 策略组如何提升节点切换效率？</h5></div>
@@ -461,9 +436,34 @@ A5：</p>
         通过策略组可设置节点优先级和分流规则，结合延迟检测功能，Clash 自动选择延迟低、稳定性高的节点处理不同流量，提高网页、视频和游戏访问速度及整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
+    <div class="panel-body">
+        Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的流量分流规则支持哪些条件？</h5></div>
+    <div class="panel-body">
+        V2Ray 支持按域名、IP、端口、协议或用户标签进行分流。用户可灵活设置国内直连、国外代理或特定节点，实现精准控制和网络优化。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 的节点策略组如何提升使用体验？</h5></div>
     <div class="panel-body">
-        策略组可将节点按延迟、用途或地理位置分类，通过规则自动选择最优节点。用户无需手动切换节点即可获得最佳速度和稳定性，提高浏览和观看流媒体的体验。    </div>
+        策略组可将节点按延迟、用途或地理位置分类，通过规则自动选择最优节点。用户无需手动切换节点即可获得最佳速度和稳定性，提高浏览和观看流媒体的体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
+    <div class="panel-body">
+        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。可为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 支持哪几种代理协议？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 支持多种协议，包括 Shadowsocks、Vmess、VLess、Trojan、HTTP、SOCKS5 等。它还可解析部分 QuantumultX 与 Clash 的订阅格式，适合 iOS 用户进行全协议代理管理与切换。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 Routing 设置可以实现什么？</h5></div>
+    <div class="panel-body">
+        V2Ray 的 Routing 系统支持基于域名、IP、端口或协议的智能分流。用户可以指定特定网站直连、部分服务走代理，还能创建黑白名单，实现灵活的网络访问控制。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -492,16 +492,16 @@ A5：</p>
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-25-free-v2ray.htm" title="10月25日|最高速度21.6M/S，2025最新Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">10月25日|最高速度21.6M/S，2025最新Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-17-free-clash.htm" title="10月17日|最高速度20.8M/S，2025最新SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月17日|最高速度20.8M/S，2025最新SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-node-share-links.htm" title="10月8日|最高速度19.6M/S，2025最新Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月8日|最高速度19.6M/S，2025最新Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-12-clash-windows.htm" title="10月12日|最高速度18.9M/S，2025最新V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">10月12日|最高速度18.9M/S，2025最新V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-13-clash-windows.htm" title="10月13日|最高速度19.5M/S，2025最新Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费高速订阅链接，手机翻墙机场推荐">10月13日|最高速度19.5M/S，2025最新Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-clash.htm" title="11月10日|最高速度20.3M/S，2025最新Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">11月10日|最高速度20.3M/S，2025最新Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-9-clash-node.htm" title="10月9日|最高速度21M/S，2025最新V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">10月9日|最高速度21M/S，2025最新V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-7-free-v2ray.htm" title="11月7日|最高速度20.6M/S，2025最新Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">11月7日|最高速度20.6M/S，2025最新Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-2-clash-node-daily-updates.htm" title="11月2日|最高速度20.6M/S，2025最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">11月2日|最高速度20.6M/S，2025最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-6-free-high-speed-nodes.htm" title="10月6日|最高速度23M/S，2025最新Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">10月6日|最高速度23M/S，2025最新Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-11-free-ssr-subscribe.htm" title="11月11日|最高速度21.9M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">11月11日|最高速度21.9M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-16-clash-node-daily-updates.htm" title="10月16日|最高速度22.6M/S，2025最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">10月16日|最高速度22.6M/S，2025最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-free-v2ray.htm" title="10月11日|最高速度19.5M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月11日|最高速度19.5M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-free-v2ray.htm" title="10月3日|最高速度20.5M/S，2025最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月3日|最高速度20.5M/S，2025最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-free-node-subscribe.htm" title="10月19日|最高速度19.7M/S，2025最新V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">10月19日|最高速度19.7M/S，2025最新V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-5-free-shadowrocket-node.htm" title="10月5日|最高速度18.9M/S，2025最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">10月5日|最高速度18.9M/S，2025最新Clash节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-clash-v2ray-ss-ssr.htm" title="11月5日|最高速度19.7M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">11月5日|最高速度19.7M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-10-free-clash-subscribe.htm" title="10月10日|最高速度21.7M/S，2025最新SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">10月10日|最高速度21.7M/S，2025最新SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-8-clash-windows.htm" title="11月8日|最高速度20.6M/S，2025最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">11月8日|最高速度20.6M/S，2025最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -513,7 +513,7 @@ A5：</p>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
