@@ -325,44 +325,9 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何自动切换最优节点？</h5></div>
-    <div class="panel-body">
-        PassWall2 会定期测试节点延迟和丢包率，并结合策略组自动切换到最优节点。无需手动干预即可保证网页、视频和游戏流量高速稳定访问，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
-    <div class="panel-body">
-        Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 手动节点切换有哪些优点？</h5></div>
-    <div class="panel-body">
-        手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess TLS 与 WebSocket 组合有哪些优势？</h5></div>
-    <div class="panel-body">
-        TLS + WebSocket 可将 VMess 流量伪装为 HTTPS，隐藏真实通信特征。结合策略组使用，可增强抗封锁能力，提高节点稳定性和访问速度，特别适合视频和游戏场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
-    <div class="panel-body">
-        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 Clash for Android 中导入订阅链接？</h5></div>
     <div class="panel-body">
         Clash for Android 支持通过订阅链接快速导入节点。用户只需在配置界面中点击“新建配置”，选择“URL 导入”并粘贴订阅地址即可，程序会自动下载并解析所有节点配置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 如何导入 V2Ray 节点？</h5></div>
-    <div class="panel-body">
-        打开 Nekoray 客户端后，点击“导入配置”，选择 V2Ray 或 Clash 类型的订阅链接。程序会自动解析节点列表，用户可一键连接或进行延迟测试。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Profile URL 是否可以同时添加多个？</h5></div>
-    <div class="panel-body">
-        可以。Clash 支持导入多个 Profile URL，用户可在“配置”面板切换不同订阅源。多个配置之间互不干扰，方便区分不同地区或用途的线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的传输协议选择对性能有何影响？</h5></div>
@@ -370,9 +335,44 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
         V2Ray 支持 TCP、WebSocket、gRPC、QUIC 等多种传输协议。不同协议在延迟、抗封锁和吞吐量上差异明显。用户可根据网络环境选择最优协议，以获得稳定且高速的连接体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
+    <div class="panel-body">
+        Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何自动切换最优节点？</h5></div>
+    <div class="panel-body">
+        PassWall2 会定期测试节点延迟和丢包率，并结合策略组自动切换到最优节点。无需手动干预即可保证网页、视频和游戏流量高速稳定访问，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 Reality 功能是什么？</h5></div>
+    <div class="panel-body">
+        Reality 是 V2Ray 新增的伪装技术，可替代传统 TLS。它无需真实证书，通过公钥验证机制实现端到端加密。相比 Trojan 的 HTTPS 伪装方式，Reality 更轻量、安全且配置更简洁。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 如何导入 V2Ray 节点？</h5></div>
+    <div class="panel-body">
+        打开 Nekoray 客户端后，点击“导入配置”，选择 V2Ray 或 Clash 类型的订阅链接。程序会自动解析节点列表，用户可一键连接或进行延迟测试。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 手动节点切换有哪些优点？</h5></div>
+    <div class="panel-body">
+        手动切换节点可以根据延迟和用途选择最佳节点，适合在节点不稳定或特殊需求下使用。虽然不支持自动订阅更新，但足够满足轻量用户对节点管理和分流的需求。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Profile URL 是否可以同时添加多个？</h5></div>
+    <div class="panel-body">
+        可以。Clash 支持导入多个 Profile URL，用户可在“配置”面板切换不同订阅源。多个配置之间互不干扰，方便区分不同地区或用途的线路。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
     <div class="panel-body">
-        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。    </div>
+        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess TLS 与 WebSocket 组合有哪些优势？</h5></div>
+    <div class="panel-body">
+        TLS + WebSocket 可将 VMess 流量伪装为 HTTPS，隐藏真实通信特征。结合策略组使用，可增强抗封锁能力，提高节点稳定性和访问速度，特别适合视频和游戏场景。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -401,16 +401,16 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-8-clash-windows.htm" title="11月8日|最高速度20.6M/S，2025最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">11月8日|最高速度20.6M/S，2025最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-3-node-share-links.htm" title="11月3日|最高速度18.6M/S，2025最新V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">11月3日|最高速度18.6M/S，2025最新V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-clash-v2ray-ss-ssr.htm" title="11月5日|最高速度19.7M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">11月5日|最高速度19.7M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-clash-v2ray-ss-ssr.htm" title="11月12日|最高速度18.6M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">11月12日|最高速度18.6M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-26-clash-node.htm" title="11月26日|最高速度22.1M/S，2025最新Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">11月26日|最高速度22.1M/S，2025最新Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-11-free-ssr-subscribe.htm" title="11月11日|最高速度21.9M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">11月11日|最高速度21.9M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-node-subscribe.htm" title="11月1日|最高速度19.5M/S，2025最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">11月1日|最高速度19.5M/S，2025最新SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-17-free-clash.htm" title="10月17日|最高速度20.8M/S，2025最新SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月17日|最高速度20.8M/S，2025最新SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-free-v2ray.htm" title="10月3日|最高速度20.5M/S，2025最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月3日|最高速度20.5M/S，2025最新Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-free-v2ray.htm" title="10月11日|最高速度19.5M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">10月11日|最高速度19.5M/S，2025最新Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-free-v2ray.htm" title="10月23日|最高速度22.6M/S，2025最新V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">10月23日|最高速度22.6M/S，2025最新V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-free-node-subscribe.htm" title="10月19日|最高速度19.7M/S，2025最新V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">10月19日|最高速度19.7M/S，2025最新V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-clash-node-daily-updates.htm" title="11月22日|最高速度18M/S，2025最新Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">11月22日|最高速度18M/S，2025最新Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-clash-windows.htm" title="12月2日|最高速度20.4M/S，2025最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">12月2日|最高速度20.4M/S，2025最新Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-3-free-ssr-node.htm" title="12月3日|最高速度20.3M/S，2025最新Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">12月3日|最高速度20.3M/S，2025最新Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-28-shadowrocket-node.htm" title="11月28日|最高速度22.3M/S，2025最新SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">11月28日|最高速度22.3M/S，2025最新SSR节点/Singbox节点/Shadowrocket节点/V2ray节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-20-free-ssr-subscribe.htm" title="11月20日|最高速度19.4M/S，2025最新Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">11月20日|最高速度19.4M/S，2025最新Shadowrocket节点/Singbox节点/Clash节点/V2ray节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-free-v2ray.htm" title="11月27日|最高速度20.8M/S，2025最新Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">11月27日|最高速度20.8M/S，2025最新Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-node-share-links.htm" title="11月19日|最高速度21.8M/S，2025最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">11月19日|最高速度21.8M/S，2025最新Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -422,10 +422,10 @@ AltStore是一款允许用户自助安装未上架应用的工具，支持安装
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
