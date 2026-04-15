@@ -1,4 +1,4 @@
-# 4月8日|最高速度19M/S，2025最新V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐  更新时间 2026-04-08 17:04:34
+# 4月15日|最高速度22.1M/S，2025最新Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐  更新时间 2026-04-15 08:30:47
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://windowsclash.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://windowsclash.github.io/uploads/2026/04/0-20260408.yaml
-- https://windowsclash.github.io/uploads/2026/04/1-20260408.yaml
-- https://windowsclash.github.io/uploads/2026/04/2-20260408.yaml
-- https://windowsclash.github.io/uploads/2026/04/3-20260408.yaml
-- https://windowsclash.github.io/uploads/2026/04/4-20260408.yaml
+- https://windowsclash.github.io/uploads/2026/04/0-20260415.yaml
+- https://windowsclash.github.io/uploads/2026/04/1-20260415.yaml
+- https://windowsclash.github.io/uploads/2026/04/2-20260415.yaml
+- https://windowsclash.github.io/uploads/2026/04/3-20260415.yaml
+- https://windowsclash.github.io/uploads/2026/04/4-20260415.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://windowsclash.github.io/uploads/2026/04/0-20260408.txt
-- https://windowsclash.github.io/uploads/2026/04/1-20260408.txt
-- https://windowsclash.github.io/uploads/2026/04/2-20260408.txt
-- https://windowsclash.github.io/uploads/2026/04/3-20260408.txt
-- https://windowsclash.github.io/uploads/2026/04/4-20260408.txt
+- https://windowsclash.github.io/uploads/2026/04/0-20260415.txt
+- https://windowsclash.github.io/uploads/2026/04/1-20260415.txt
+- https://windowsclash.github.io/uploads/2026/04/2-20260415.txt
+- https://windowsclash.github.io/uploads/2026/04/3-20260415.txt
+- https://windowsclash.github.io/uploads/2026/04/4-20260415.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://windowsclash.github.io/uploads/2026/04/20260408.json
+- https://windowsclash.github.io/uploads/2026/04/20260415.json
 
 ## 更多Clash节点订阅 ：
 
