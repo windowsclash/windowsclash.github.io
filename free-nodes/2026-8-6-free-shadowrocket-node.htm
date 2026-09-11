@@ -189,39 +189,18 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅文件链接</h2><p>&nbsp;</p><p><strong>Clash订阅链接</strong></p><p>https://windowsclash.github.io/uploads/2026/08/0-20260806.yaml</p><p>https://windowsclash.github.io/uploads/2026/08/1-20260806.yaml</p><p>https://windowsclash.github.io/uploads/2026/08/2-20260806.yaml</p><p>https://windowsclash.github.io/uploads/2026/08/3-20260806.yaml</p><p>https://windowsclash.github.io/uploads/2026/08/4-20260806.yaml</p><p>&nbsp;</p><p><strong>V2ray订阅链接:</strong></p><p>https://windowsclash.github.io/uploads/2026/08/0-20260806.txt</p><p>https://windowsclash.github.io/uploads/2026/08/1-20260806.txt</p><p>https://windowsclash.github.io/uploads/2026/08/3-20260806.txt</p><p><strong>Sing-Box订阅链接</strong></p><p>https://windowsclash.github.io/uploads/2026/08/20260806.json</p><h2>使用必看</h2><p>&nbsp;</p><p>全部节点信息均来自互联网收集，且用且珍惜，推荐机场：「<a href="https://mmm.happymao.cat/#/register?code=OMZAblTs" class="js_to" data-url="https://mmm.happymao.cat/#/register?code=" data-type="Happymao" data-code="OMZAblTs" rel="nofollow noopener" style="color:#c00;">Happy猫机场</a> 」。仅针对用于学习研究的用户分享，请勿随意传播其他信息。免费节点有效时间比较短，遇到失效是正常现象。</p><h2>斐讯K2刷华硕固件解锁网络自由：从入门到精通的完整指南</h2>  <h2>引言：当路由器遇见无限可能</h2>  <p>在这个信息流动如血液的数字时代，一堵无形的"墙"却让无数网民陷入数字围城。当常规手段无法满足我们对知识探索的渴望时，技术爱好者们发现：一台价值百元的斐讯K2路由器，经过华硕固件的魔法改造，竟能化身网络自由的钥匙。本文将带您深入探索这场硬件与软件的完美联姻，从设备解析到风险规避，手把手教您打造专属的科学上网利器。  </p>  <h2>第一章 认识我们的"改造对象"</h2>  <h3>1.1 斐讯K2：被低估的硬件黑马</h3>  <p>这款2016年面世的千兆路由器，凭借MT7620A芯片方案和128MB内存的配置，在二手市场以不到百元的价格持续热销。其双频并发特性（2.4GHz 300Mbps + 5GHz 867Mbps）和四根5dBi高增益天线，即使在2023年仍能胜任多数家庭场景。更妙的是，其开放的Bootloader设计犹如为刷机爱好者预留的后门。  </p>  <h3>1.2 华硕固件：路由系统的"瑞士军刀"</h3>  <p>华硕官方固件（特别是衍生改版如Padavan）以稳定性著称，其杀手级功能包括：<br /> - 完整的VPN协议支持（OpenVPN/PPTP/L2TP）<br /> - 智能QoS流量控制<br /> - 广告过滤与家长控制<br /> - 定时任务与唤醒功能<br /> 实测显示，刷入华硕固件后，K2的NAT转发性能提升达30%，Wi-Fi延迟降低至原有水平的2/3。  </p>  <h2>第二章 战前准备：工具与风险防控</h2>  <h3>2.1 必备工具清单</h3>  <ul> <li>硬件：斐讯K2（A2/A6版本）、网线、12V/1A电源  </li> <li>软件：<br /> • 华硕RT-AC54U适配固件（建议选择Padavan改版）<br /> • TFTP上传工具（如tftpd32）<br /> • 谷歌浏览器（兼容性最佳）  </li> </ul>  <h3>2.2 风险预警与应急预案</h3>  <p>重要数据表明，约5%的刷机失败源于：<br /> 1. 中途断电（准备UPS或满电笔记本）<br /> 2. 固件版本错误（务必验证MD5校验值）<br /> 3. 浏览器缓存干扰（建议隐身模式操作）  </p>  <p><strong>救命锦囊</strong>：当遭遇"变砖"时，可通过捅住Reset键30秒进入救援模式，使用TFTP强制刷入原厂固件。  </p>  <h2>第三章 实战演练：九步完美刷机</h2>  <h3>3.1 固件获取的艺术</h3>  <p>非官方渠道固件可能存在后门，建议从以下可信源获取：<br /> - Padavan项目GitHub仓库（搜索hanwckf版本）<br /> - 恩山无线论坛精华帖（需注册）  </p>  <h3>3.2 关键操作流程分解</h3>  <ol> <li><strong>降级固件</strong>（针对新版K2）：<br /> <code>bash wget http://192.168.2.1/cgi-bin/luci/;stok=/api/system/flash_firmware?version=unspec</code></li> <li><strong>开启Telnet</strong>：<br /> 访问<code>http://路由器IP/usr/bin/telnetd_start</code>  </li> <li><strong>上传固件</strong>：<br /> <code>bash mtd -r write /tmp/固件名.trx firmware</code></li> </ol>  <h3>3.3 华硕固件初始化设置</h3>  <p>首次登录建议：<br /> - 更改默认IP段（如192.168.50.1）<br /> - 启用WPA3加密<br /> - 关闭WPS功能（安全漏洞源）  </p>  <h2>第四章 科学上网的终极配置</h2>  <h3>4.1 VPN服务器搭建详解</h3>  <p>以OpenVPN为例：<br /> 1. 在【VPN】→【OpenVPN】启用服务器<br /> 2. 生成证书（建议2048位RSA）<br /> 3. 配置推送路由：<br />    <code>push "route 192.168.50.0 255.255.255.0"</code></p>  <h3>4.2 智能分流方案</h3>  <p>利用dnsmasq实现：<br /> <code>conf server=/google.com/8.8.8.8 server=/twitter.com/8.8.4.4</code></p>  <h2>第五章 性能调优与故障排查</h2>  <h3>5.1 无线信号增强技巧</h3>  <ul> <li>调整地区代码为"澳大利亚"（信号强度提升20%）  </li> <li>手动选择149信道（5GHz干扰最少）  </li> </ul>  <h3>5.2 常见问题速查表</h3>  <p>| 现象 | 解决方案 |<br /> |-------|----------|<br /> | 5G频段消失 | 重置NVRAM |<br /> | VPN连接失败 | 检查UDP 1194端口 |<br /> | 频繁断流 | 关闭硬件NAT加速 |  </p>  <h2>结语：技术赋予的自由意志</h2>  <p>这场斐讯K2与华硕固件的邂逅，本质上是开源精神对硬件潜力的释放。当您按照本指南完成全部步骤时，获得的不仅是一台强化版路由器，更是突破信息边界的数字通行证。记住：技术永远中立，关键在于使用者如何驾驭这份力量。  </p>  <p><strong>深度点评</strong>：<br /> 这篇指南的价值在于将复杂的网络技术转化为可执行的烹饪食谱。不同于普通教程的碎片化呈现，它构建了从认知到实践的完整闭环，特别强调：<br /> 1. <strong>安全边际</strong>：每个风险点都配有应对方案<br /> 2. <strong>性能极致</strong>：不满足于基础功能，挖掘硬件全部潜能<br /> 3. <strong>人文关怀</strong>：提醒技术伦理，避免沦为纯工具主义  </p>  <p>当大多数教程还在教"怎么做"时，本文已经回答了"为什么这样做"和"怎样做得更好"。这种立体化的知识传递，正是当下技术文档最稀缺的品质。</p> </div>
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
-        <p>上一个：<a href="/free-nodes/free-clash-subscribe-2026-8-5.htm">8月5日|最高速度22.4M/S，2025最新Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></p>
         <p>下一个：<a href="/free-nodes/free-subscribe-node-2026-8-7.htm">8月7日|最高速度20.5M/S，2025最新Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Vmess 节点配置时常见错误有哪些？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的本地 PAC 模式与全局模式有什么区别？</h5></div>
     <div class="panel-body">
-        常见错误包括端口号不匹配、UUID 错误、TLS 设置不正确或传输类型配置错误。这些都会导致连接失败。检查服务器配置与客户端参数一致性是解决问题的关键。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 如何实现按应用分流？</h5></div>
-    <div class="panel-body">
-        Surfboard 支持通过策略组和规则文件按应用分流，将不同应用的流量分配到不同节点。这样可保证游戏或视频走低延迟节点，提高访问速度并优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何设置不同用户的带宽限制？</h5></div>
-    <div class="panel-body">
-        管理员可为每个用户设置独立的带宽上限和流量配额。超过配额后可自动阻断或降速，确保服务器资源合理分配，避免单个用户占用过多带宽而影响其他用户体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
-    <div class="panel-body">
-        Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。<hr />    </div>
+        PAC 模式通过规则文件自动判定哪些域名走代理，能兼顾速度与便利；全局模式则所有流量都通过代理，适合调试或访问被完全屏蔽的网络。两者可在界面一键切换，根据需求灵活选择。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 的 MITM 功能如何使用？</h5></div>
     <div class="panel-body">
         QuantumultX 的 MITM（中间人）功能可拦截 HTTPS 流量，用于修改或分析请求与响应。开启时需安装客户端生成的根证书，确保能正确解析加密数据。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 能否兼容最新的 iOS 系统？</h5></div>
-    <div class="panel-body">
-        Potatso Lite 更新频率较低，在新版本 iOS 上可能出现兼容性问题。若遇到无法连接或闪退情况，建议升级至其他活跃维护的客户端如 Shadowrocket 或 Quantumult X。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 的 UDP 转发如何配置？</h5></div>
@@ -239,9 +218,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Trojan-go 在原版 Trojan 基础上扩展了多协议支持、WebSocket、gRPC、mux 多路复用等特性，同时优化性能并支持更丰富的客户端。相比原版，它更灵活，适合高级用户或多平台部署需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的本地 PAC 模式与全局模式有什么区别？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 能否兼容最新的 iOS 系统？</h5></div>
     <div class="panel-body">
-        PAC 模式通过规则文件自动判定哪些域名走代理，能兼顾速度与便利；全局模式则所有流量都通过代理，适合调试或访问被完全屏蔽的网络。两者可在界面一键切换，根据需求灵活选择。    </div>
+        Potatso Lite 更新频率较低，在新版本 iOS 上可能出现兼容性问题。若遇到无法连接或闪退情况，建议升级至其他活跃维护的客户端如 Shadowrocket 或 Quantumult X。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 如何实现按应用分流？</h5></div>
+    <div class="panel-body">
+        Surfboard 支持通过策略组和规则文件按应用分流，将不同应用的流量分配到不同节点。这样可保证游戏或视频走低延迟节点，提高访问速度并优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 如何设置不同用户的带宽限制？</h5></div>
+    <div class="panel-body">
+        管理员可为每个用户设置独立的带宽上限和流量配额。超过配额后可自动阻断或降速，确保服务器资源合理分配，避免单个用户占用过多带宽而影响其他用户体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Vmess 节点配置时常见错误有哪些？</h5></div>
+    <div class="panel-body">
+        常见错误包括端口号不匹配、UUID 错误、TLS 设置不正确或传输类型配置错误。这些都会导致连接失败。检查服务器配置与客户端参数一致性是解决问题的关键。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的 Rule-Set 与 Clash Premium 是否兼容？</h5></div>
+    <div class="panel-body">
+        Mihomo 完全兼容 Clash Premium 的 Rule-Set 格式，支持相同的远程规则订阅与策略分组。用户可直接迁移原 Clash 配置，无需额外修改或转换。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -289,16 +288,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-7-20-clash-v2ray-ss-ssr.htm" title="7月20日|最高速度21.3M/S，2025最新Clash节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/V2ray节点免费高速订阅链接，手机翻墙机场推荐">7月20日|最高速度21.3M/S，2025最新Clash节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点/V2ray节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-13-free-clash-subscribe.htm" title="7月13日|最高速度22.2M/S，2025最新Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点免费高速订阅链接，手机翻墙机场推荐">7月13日|最高速度22.2M/S，2025最新Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-19-free-v2ray-subscribe.htm" title="7月19日|最高速度21.4M/S，2025最新Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐">7月19日|最高速度21.4M/S，2025最新Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-30-free-node-subscribe.htm" title="7月30日|最高速度18.9M/S，2025最新Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">7月30日|最高速度18.9M/S，2025最新Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-9.htm" title="8月9日|最高速度22M/S，2025最新Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">8月9日|最高速度22M/S，2025最新Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-10-free-clash.htm" title="8月10日|最高速度22.2M/S，2025最新Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">8月10日|最高速度22.2M/S，2025最新Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-28-free-clash.htm" title="7月28日|最高速度18M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">7月28日|最高速度18M/S，2025最新Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/Trojan节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-8-5.htm" title="8月5日|最高速度22.4M/S，2025最新Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">8月5日|最高速度22.4M/S，2025最新Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-clash-v2ray-ss-ssr.htm" title="8月2日|最高速度21.6M/S，2025最新V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">8月2日|最高速度21.6M/S，2025最新V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-7-29.htm" title="7月29日|最高速度18.7M/S，2025最新Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐">7月29日|最高速度18.7M/S，2025最新Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-25.htm" title="8月25日|最高速度18.5M/S，2025最新Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐">8月25日|最高速度18.5M/S，2025最新Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Singbox节点/Clash节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-clash-v2ray-ss-ssr.htm" title="8月8日|最高速度23M/S，2025最新Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">8月8日|最高速度23M/S，2025最新Trojan节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日|最高速度22.9M/S，2025最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐">9月4日|最高速度22.9M/S，2025最新V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-21.htm" title="8月21日|最高速度20.2M/S，2025最新Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐">8月21日|最高速度20.2M/S，2025最新Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-9.htm" title="8月9日|最高速度22M/S，2025最新Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐">8月9日|最高速度22M/S，2025最新Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-9-3.htm" title="9月3日|最高速度22.7M/S，2025最新SSR节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐">9月3日|最高速度22.7M/S，2025最新SSR节点/Singbox节点/V2ray节点/Clash节点/Trojan节点/Shadowrocket节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-26-free-node-subscribe.htm" title="8月26日|最高速度18.1M/S，2025最新Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐">8月26日|最高速度18.1M/S，2025最新Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-free-v2ray.htm" title="8月18日|最高速度19.2M/S，2025最新Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">8月18日|最高速度19.2M/S，2025最新Trojan节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-11.htm" title="8月11日|最高速度22.3M/S，2025最新Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐">8月11日|最高速度22.3M/S，2025最新Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费高速订阅链接，手机翻墙机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -310,10 +309,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
